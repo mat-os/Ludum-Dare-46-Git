@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class Human : MonoBehaviour, IDamagable, IHittable
 {
+    [SerializeField]private float damage;
+    [SerializeField] private float attackRate;
+
+    [SerializeField] private float HPmax;
+
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
 
@@ -39,7 +44,16 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         }
         #endregion
 
+        Initialisation(damage, attackRate,HPmax);
+    }
 
+
+    public void Initialisation(float _damage, float _attackRate, float _HPMax)
+    {
+        damageSystem.SetDamage(_damage);
+        damageSystem.SetAttackRate(_attackRate);
+
+        hpSysytem.SetMaxHP(_HPMax);
     }
 
     void Update()

@@ -13,11 +13,19 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
     IDamagable damageable;
     IHittable hittable;
 
-    void Start()
+    public void Initialisation(float _damage, float _attackRate, float _HPMax)
     {
         hpSysytem = GetComponent<HPSysytem>();
         damageSystem = GetComponent<DamageSystem>();
 
+        damageSystem.SetDamage(_damage);
+        damageSystem.SetAttackRate(_attackRate);
+
+        hpSysytem.SetMaxHP(_HPMax);
+    }
+
+    void Start()
+    {
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<Human>();
         foreach (Human s in ss)
         {
@@ -34,8 +42,6 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
 
     public void Hit()
     {
-        //damageSystem.StartFightWithHuman(enemies[0]);
-
         damageSystem.HitTarget(enemies[0]);
     }
 }

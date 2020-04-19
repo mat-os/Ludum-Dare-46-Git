@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 
   HP: 100
   attackDamage: 10
+  attackRate: 1

@@ -7,8 +7,8 @@ public class HPSysytem : MonoBehaviour
     [SerializeField]private GameObject HPBarPrefab;
     [SerializeField] private Transform HPBarInstancePos;
 
-    private float HPmax = 100;
-    private float HPamount = 100;
+    private float HPmax;
+    private float HPamount;
 
     private HPBar hpBar;
 
@@ -39,5 +39,11 @@ public class HPSysytem : MonoBehaviour
     public float GetHPAmount()
     {
         return HPamount;
+    }
+
+    public void SetMaxHP(float _maxHP)
+    {
+        HPmax = _maxHP;
+        HPamount = HPmax;
     }
 }

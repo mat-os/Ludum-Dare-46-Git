@@ -12,9 +12,11 @@ public class EnemyData : ScriptableObject
     [SerializeField]
     private string description;
     [SerializeField]
-    private int HP;
+    private float HP;
     [SerializeField]
-    private int attackDamage;
+    private float attackDamage;
+    [SerializeField]
+    private float attackRate;
 
     public GameObject EnemyGO
     {
@@ -39,7 +41,7 @@ public class EnemyData : ScriptableObject
         }
     }
 
-    public int HPAmount
+    public float HPAmount
     {
         get
         {
@@ -47,11 +49,18 @@ public class EnemyData : ScriptableObject
         }
     }
 
-    public int AttackDamage
+    public float AttackDamage
     {
         get
         {
             return attackDamage;
+        }
+    }
+    public float AttackRate
+    {
+        get
+        {
+            return attackRate;
         }
     }
 }

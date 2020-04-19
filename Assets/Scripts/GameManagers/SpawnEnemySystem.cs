@@ -20,6 +20,8 @@ public class SpawnEnemySystem : MonoBehaviour
 
         // Sets the name of the instantiated entity to be the string defined in the ScriptableObject and then appends it with a unique number. 
         currentEnemy.name = enemyData.EnemyName;
+
+        currentEnemy.GetComponent<Enemy>().Initialisation(enemyData.AttackDamage, enemyData.AttackRate, enemyData.HPAmount);
     }
 }
 

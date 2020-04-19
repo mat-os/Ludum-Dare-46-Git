@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 358769247}
   - component: {fileID: 358769246}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1510,6 +1510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d42c9d5a7b0bd74fa2571b380386b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+  attackRate: 1
+  HPmax: 100
 --- !u!114 &614402669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,6 +1705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d42c9d5a7b0bd74fa2571b380386b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+  attackRate: 1
+  HPmax: 100
 --- !u!114 &762061488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3401,7 +3407,7 @@ PrefabInstance:
     - target: {fileID: 3588774177196905805, guid: e63109876495a0e49ad9c3fbc8e2af3c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 3588774177196905805, guid: e63109876495a0e49ad9c3fbc8e2af3c,
         type: 3}
@@ -4140,7 +4146,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1845312861}
-  - component: {fileID: 1845312862}
   m_Layer: 5
   m_Name: Teammate HP Bar
   m_TagString: Untagged
@@ -4168,18 +4173,6 @@ RectTransform:
   m_AnchoredPosition: {x: -296.2, y: 181.99998}
   m_SizeDelta: {x: 359.0719, y: 73.883545}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1845312862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845312860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a0bb71fb84215140a98300bf4672811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1899749253
 GameObject:
   m_ObjectHideFlags: 0

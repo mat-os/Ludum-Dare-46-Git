@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class DamageSystem : MonoBehaviour
 {
-    private float damage = 10;
-    private float attackRate = 1;
+    private float damage;
+    private float attackRate;
 
     void Start()
     {
+        if (gameObject.GetComponent<Human>() != null)
+        {
+
+        }
+        else if (gameObject.GetComponent<Enemy>() != null)
+        {
+
+        }
+
         Debug.Log("DamageSystemInit");
     }
 
@@ -21,17 +30,6 @@ public class DamageSystem : MonoBehaviour
     {
         StartCoroutine(AttackEnemy(target, damage, attackRate));
     }
-
-    //public void StartFightWithHuman(Human target)
-    //{
-    //    StartCoroutine(AttackRoutine(target, damage, attackRate));
-    //}
-
-    //public void StartFightWithEnemy(Enemy target)
-    //{
-    //    StartCoroutine(AttackRoutine(target, damage, attackRate));
-    //}
-
 
     IEnumerator AttackHuman(Human target, float _damage, float _attackRate)
     {
