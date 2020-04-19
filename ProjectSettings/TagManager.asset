@@ -47,3 +47,6 @@ TagManager:
   - name: Midlground
     uniqueID: 3672893005
     locked: 0
+  - name: Foreground
+    uniqueID: 3647749909
+    locked: 0
