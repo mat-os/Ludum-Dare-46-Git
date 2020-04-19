@@ -1,58 +1,67 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ManaBar : MonoBehaviour
 {
+    [SerializeField]private TMP_Text manaText;
 
     private Mana mana;
     private Image barImage;
 
-    private void Awake()
+    public void InitManabar(int maxMana, float _manaRegenAmount)
     {
         barImage = transform.Find("Bar").GetComponent<Image>();
 
-        mana = new Mana();
+        mana = new Mana(maxMana, _manaRegenAmount);
     }
 
-    private void Update()
+    public void SpendMana(float spendMana)
     {
-        mana.Update();
-        barImage.fillAmount = mana.GetManaNormalized();
+        mana.SpendMana(spendMana);
+    }
 
-        /*
-        if (Input.GetKeyDown("space"))
+    private void FixedUpdate()
+    {
+        if (mana != null)
         {
-            mana.SpendMana(10);
+            mana.Update(manaText);
+            barImage.fillAmount = mana.GetManaNormalized();
         }
-        */
     }
 }
 
 public class Mana
 {
-    public const int MANA_MAX = 100;
+    public int MANA_MAX = 100;
 
     private float manaAmount;
     private float manaRegenAmount;
 
     //Set Variables
-    public Mana()
+    public Mana(int maxMana, float _manaRegenAmount)
     {
-        manaAmount = 0;
-        manaRegenAmount = 3f;
+        MANA_MAX = maxMana;
+
+        manaAmount = MANA_MAX - 20;
+
+        manaRegenAmount = _manaRegenAmount;
     }
 
     //Add ManaRegen and Clamp it
-    public void Update()
+    public void Update(TMP_Text textToUpdate)
     {
         manaAmount += manaRegenAmount * Time.deltaTime;
         manaAmount = Mathf.Clamp(manaAmount, 0, MANA_MAX);
+
+        //Setup Text
+        textToUpdate.text = MANA_MAX + "/" + manaAmount.ToString("F1");
     }
 
     //Method to spend mana
-    public void SpendMana(int amount)
+    public void SpendMana(float amount)
     {
         if(manaAmount >= amount)
         {

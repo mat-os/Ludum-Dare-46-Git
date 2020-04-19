@@ -74,6 +74,11 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         }
     }
 
+    public void TakeHeal(float healAmount)
+    {
+        hpSysytem.TakeHeal(healAmount);
+    }
+
     public void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken);

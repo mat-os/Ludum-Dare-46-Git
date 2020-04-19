@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 921e36a0456798340ab1cb55b12062b3, type: 3}
-  m_Name: Enemy1
+  m_Name: EasyEnemy
   m_EditorClassIdentifier: 
   enemyGO: {fileID: 4276247094980169548, guid: cccee6ee1f9f83a4f8f3577f28cb1529, type: 3}
   enemyName: ARRRR

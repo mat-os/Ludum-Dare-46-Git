@@ -36,6 +36,20 @@ public class HPSysytem : MonoBehaviour
         Debug.Log(gameObject.name + " Total Health = " + HPamount);
     }
 
+    public void TakeHeal(float healAmount)
+    {
+        if (HPamount + healAmount >= HPmax)
+        {
+            HPamount = HPmax;
+        }
+        else
+        {
+            HPamount += healAmount;
+        }
+
+        hpBar.UpdateHPBar(HPmax, HPamount);
+    }
+
     public float GetHPAmount()
     {
         return HPamount;

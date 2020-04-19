@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameInstance : MonoBehaviour
 {
     public PlayerInput playerInput;
-
+    public ManaController manaController;
     
     #region Awake
     public static GameInstance Instance;

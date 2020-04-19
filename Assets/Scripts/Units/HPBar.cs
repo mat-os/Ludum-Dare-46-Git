@@ -9,6 +9,6 @@ public class HPBar : MonoBehaviour
 
     public void UpdateHPBar(float maxHP, float HPAmount)
     {
-       HPtext.text = maxHP + "/" + HPAmount;
+       HPtext.text = HPAmount + "/" +  maxHP;
     }
 }

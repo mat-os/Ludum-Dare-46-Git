@@ -38,10 +38,20 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
     public void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken);
+
+        if (hpSysytem.GetHPAmount() <= 0)
+        {
+            EnemyDead();
+        }
     }
 
     public void Hit()
     {
         damageSystem.HitTarget(enemies[0]);
+    }
+
+    private void EnemyDead()
+    {
+        Destroy(gameObject);
     }
 }
