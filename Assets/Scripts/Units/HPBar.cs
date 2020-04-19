@@ -9,13 +9,18 @@ public class HPBar : MonoBehaviour
 
     [SerializeField] private Transform HPSliderImage;
     [SerializeField] private Transform FullHPSliderImage;
-    
+
+    private float HPNow;
+
     public void UpdateHPBar(float maxHP, float HPAmount)
     {
        HPtext.text = HPAmount + "/" +  maxHP;
 
-       var HPtemp = HPAmount / maxHP;
-       SetFillBar(HPtemp);
+       HPNow = HPAmount / maxHP;
+
+       SetFillBar(HPNow);
+
+       Debug.Log(HPNow + gameObject.name);
     }
 
     void Start()

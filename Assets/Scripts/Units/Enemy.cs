@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
 
     public void Hit()
     {
-        damageSystem.HitTarget(enemies[0]);
+        damageSystem.HitTarget(enemies[Random.Range(0, enemies.Count)]);
     }
 
     private void EnemyDead()
