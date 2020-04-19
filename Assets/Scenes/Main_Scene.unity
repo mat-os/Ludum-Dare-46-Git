@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   attackRate: 1
-  HPmax: 70
+  HPmax: 100
 --- !u!114 &762061488
 MonoBehaviour:
   m_ObjectHideFlags: 0
