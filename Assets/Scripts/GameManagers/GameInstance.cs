@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameInstance : MonoBehaviour
 {
-    public UIGameplayManager uiGameplayManager;
     public PlayerInput playerInput;
 
     
