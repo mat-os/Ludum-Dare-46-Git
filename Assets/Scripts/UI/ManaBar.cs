@@ -23,6 +23,11 @@ public class ManaBar : MonoBehaviour
         mana.SpendMana(spendMana);
     }
 
+    public float GetManaAmount()
+    {
+        return mana.GetManaAmount();
+    }
+
     private void FixedUpdate()
     {
         if (mana != null)
@@ -57,7 +62,7 @@ public class Mana
         manaAmount = Mathf.Clamp(manaAmount, 0, MANA_MAX);
 
         //Setup Text
-        textToUpdate.text = manaAmount.ToString("F1") + "/" +  MANA_MAX;
+        textToUpdate.text = manaAmount.ToString("F0") + "/" +  MANA_MAX.ToString("F0");
     }
 
     //Method to spend mana
@@ -77,5 +82,10 @@ public class Mana
     public float GetManaNormalized()
     {
         return manaAmount / MANA_MAX;
+    }
+
+    public float GetManaAmount()
+    {
+        return manaAmount;
     }
 } 

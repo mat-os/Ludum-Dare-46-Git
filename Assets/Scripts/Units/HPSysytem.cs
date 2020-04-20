@@ -10,7 +10,7 @@ public class HPSysytem : MonoBehaviour
     private float HPmax;
     private float HPamount;
 
-    private HPBar hpBar;
+    HPBar hpBar;
 
     void Start()
     {
@@ -21,6 +21,8 @@ public class HPSysytem : MonoBehaviour
         hpBar = hpBarObj.GetComponent<HPBar>();
 
         hpBar.UpdateHPBar(HPmax, HPamount);
+
+        Debug.Log(hpBar.name + gameObject.name);
 
         StartCoroutine(startRoutine());
     }

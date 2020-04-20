@@ -10,8 +10,11 @@ public class SimpleHeal : Skill
 
     public override void UseSkill()
     {
-        ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
+        if (GameInstance.Instance.manaController.GetManaAmount() > manacost)
+        {
+            ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
 
-        GameInstance.Instance.manaController.SpendMana(manacost);
+            GameInstance.Instance.manaController.SpendMana(manacost);
+        }
     }
 }

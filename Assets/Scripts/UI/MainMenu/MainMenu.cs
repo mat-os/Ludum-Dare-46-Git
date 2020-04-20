@@ -28,13 +28,6 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadAsync(sceneIndex));
     }
 
-    /*//УБРАТЬ!
-    private void Start()
-    {
-        LoadLevel(2);
-
-    }*/
-
     IEnumerator LoadAsync(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);

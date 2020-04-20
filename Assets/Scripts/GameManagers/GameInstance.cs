@@ -8,7 +8,13 @@ public class GameInstance : MonoBehaviour
     public ManaController manaController;
 
     public GameStatus gameStatus;
-    
+
+    public GameplayController gameplayController;
+
+
+    public FailUIController failUiController;
+
+
     #region Awake
     public static GameInstance Instance;
 

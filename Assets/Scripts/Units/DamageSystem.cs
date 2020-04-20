@@ -9,12 +9,18 @@ public class DamageSystem : MonoBehaviour
     private float attackRate;
 
     private AnimationController animationController;
+    private EnemyAnimController enemyAnimController;
 
     void Start()
     {
         if (gameObject.GetComponent<AnimationController>() != null)
         {
             animationController = GetComponent<AnimationController>();
+        }
+
+        if (gameObject.GetComponent<EnemyAnimController>() != null)
+        {
+            enemyAnimController = GetComponent<EnemyAnimController>();
         }
     }
 
@@ -35,11 +41,15 @@ public class DamageSystem : MonoBehaviour
 
     IEnumerator AttackHuman(Human target, float _damage, float _attackRate)
     {
+        yield return new WaitForSeconds(Random.Range(0.2f, 1.5f));
+
         while (target.GetComponent<HPSysytem>().GetHPAmount() > 0)
         {
             yield return new WaitForSeconds(_attackRate);
 
             target.TakeDamage(_damage);
+
+            enemyAnimController.AttackAnimation();
         }
 
         yield  return null;

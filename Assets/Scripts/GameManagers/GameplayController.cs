@@ -25,7 +25,7 @@ public class GameplayController : MonoBehaviour
         }
     }
 
-    void Walk()
+    public void Walk()
     {
         gameStatus.gameState = GameStatus.GameState.Walk;
 
@@ -34,7 +34,7 @@ public class GameplayController : MonoBehaviour
         StartCoroutine(WalkRoutine());
     }
 
-    void Fight()
+    public void Fight()
     {
         gameStatus.gameState = GameStatus.GameState.Fight;
 
@@ -50,5 +50,12 @@ public class GameplayController : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(walkTimeMinMax.x, walkTimeMinMax.y));
 
         Fight();
+    }
+
+    public void GameFail()
+    {
+        gameStatus.gameState = GameStatus.GameState.Dead;
+
+        GameInstance.Instance.failUiController.GameIsFailed();
     }
 }

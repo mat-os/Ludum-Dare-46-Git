@@ -21,6 +21,6 @@ public class AnimationController : MonoBehaviour
 
     public void AttackAnimation()
     {
-        animator.SetTrigger("LowHP_Attack");
+        animator.SetTrigger("NormHP_Attack");
     }
 }

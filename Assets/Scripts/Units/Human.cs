@@ -67,6 +67,11 @@ public class Human : MonoBehaviour, IDamagable, IHittable
             if (enemy == null && isFight == false)
             {
                 FindTarget();
+
+                if (enemy == null)
+                {
+                    EndFight();
+                }
             }
         }
     }
@@ -75,7 +80,7 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     {
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
 
-        if (ss.First() != null)
+        if (ss.Count() > 0)
         {
             enemy = ss.First();
 
@@ -89,7 +94,6 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         {
             EndFight();
         }
-
     }
 
     public void FightTarget()
@@ -102,7 +106,8 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     public void EndFight()
     {
         Debug.Log("FIGHT END");
-        //GameInstance.Instance.game
+
+        GameInstance.Instance.gameplayController.Walk();
     }
 
     public void TakeHeal(float healAmount)
@@ -113,6 +118,11 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     public void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken);
+
+        if (hpSysytem.GetHPAmount() < 0)
+        {
+            GameInstance.Instance.gameplayController.GameFail();
+        }
     }
 
     public void Hit()
