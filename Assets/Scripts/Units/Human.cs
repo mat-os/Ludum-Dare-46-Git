@@ -15,7 +15,9 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
 
-    public List<Enemy> enemies = new List<Enemy>();
+    //public List<Enemy> enemies = new List<Enemy>();
+
+    public Enemy enemy;
 
     IDamagable damageable;
     IHittable hittable;
@@ -81,16 +83,24 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     public void FindTarget()
     {
+        //var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
+
+        //foreach (Enemy s in ss)
+        //{
+        //    if (s.isAlive)
+        //    {
+        //        Debug.Log("FIND ENEMY" + s.name);
+        //        enemies.Add(s);
+        //    }
+        //}
+
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
 
-        foreach (Enemy s in ss)
-        {
-            if (s.isAlive)
-            {
-                Debug.Log("FIND ENEMY" + s.name);
-                enemies.Add(s);
-            }
-        }
+        enemy = ss.First();
+
+        Debug.Log(ss.Count());
+
+        ss = null;
     }
 
     public void FightTarget()

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleHeal : MonoBehaviour
+public class SimpleHeal : Skill
 {
     [SerializeField]private float healAmount;
     [SerializeField]private float manacost;
     [SerializeField]private float cooldownTime;
 
-    public void SimpleHealSkill()
+    public override void UseSkill()
     {
         ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
 
