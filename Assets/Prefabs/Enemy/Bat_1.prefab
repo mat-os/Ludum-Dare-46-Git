@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 7630293633951654624}
   - component: {fileID: 7057755123862971150}
   - component: {fileID: -4447410198508546579}
+  - component: {fileID: 1608293168209762486}
   m_Layer: 0
   m_Name: Bat_1
   m_TagString: Untagged
@@ -185,3 +186,16 @@ MonoBehaviour:
   HPBarPrefab: {fileID: 2030528975778280237, guid: 83a103cd407417b47b0f8a6c469845b2,
     type: 3}
   HPBarInstancePos: {fileID: 4256488607104598654}
+--- !u!114 &1608293168209762486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4276247094980169548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814fb201596b29949ae773a18ba5bbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 4276247094963721871}

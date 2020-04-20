@@ -81,20 +81,21 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     public void FindTarget()
     {
-        enemies.Clear();
-
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
+
         foreach (Enemy s in ss)
         {
-            enemies.Add(s);
+            if (s.isAlive)
+            {
+                Debug.Log("FIND ENEMY" + s.name);
+                enemies.Add(s);
+            }
         }
     }
 
     public void FightTarget()
     {
         Hit();
-
-        Debug.Log(enemies.Count);
 
         isFight = true;
     }
@@ -127,7 +128,9 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     public void KillEnemy(Enemy targetEnemy)
     {
-        FindTarget();
+        enemies = null;
+
+        Debug.Log("KILL!!!!!!!!!!!!!!!!!!!");
 
         isFight = false;
     }

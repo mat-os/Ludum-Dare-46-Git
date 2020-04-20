@@ -37,7 +37,7 @@ public class DamageSystem : MonoBehaviour
     {
         while (target.GetComponent<HPSysytem>().GetHPAmount() > 0)
         {
-            yield return new WaitForSeconds(attackRate);
+            yield return new WaitForSeconds(_attackRate);
 
             target.TakeDamage(_damage);
         }
@@ -47,9 +47,10 @@ public class DamageSystem : MonoBehaviour
 
     IEnumerator AttackEnemy(Enemy target, float _damage, float _attackRate)
     {
-        if (target.GetComponent<HPSysytem>().GetHPAmount() <= 0)
+        if (target.GetComponent<HPSysytem>().GetHPAmount() <= 0 || target.isAlive == false)
         {
             gameObject.GetComponent<Human>().KillEnemy(target);
+
             yield return null;
         }
         else
@@ -60,9 +61,7 @@ public class DamageSystem : MonoBehaviour
 
                 PlayAnimation();
 
-                Debug.Log("AttacCKKCKCKCK");
-
-                yield return new WaitForSeconds(attackRate);
+                yield return new WaitForSeconds(_attackRate);
             }
         }
     }

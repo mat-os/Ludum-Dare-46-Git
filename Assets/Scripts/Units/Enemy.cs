@@ -8,7 +8,11 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
 
+    private EnemyAnimController enemyAnim;
+
     private List<Human> enemies = new List<Human>();
+
+    public bool isAlive = true;
 
     IDamagable damageable;
     IHittable hittable;
@@ -26,6 +30,8 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
 
     void Start()
     {
+        enemyAnim = gameObject.GetComponent<EnemyAnimController>();
+
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<Human>();
         foreach (Human s in ss)
         {
@@ -52,6 +58,11 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
 
     private void EnemyDead()
     {
+        enemyAnim.DeadAnim();
+
+        isAlive = false;
+
+        //Destroy(this);
         gameObject.SetActive(false);
         //Destroy(gameObject);
     }
