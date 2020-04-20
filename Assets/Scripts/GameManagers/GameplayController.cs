@@ -30,26 +30,38 @@ public class GameplayController : MonoBehaviour
     {
         gameStatus.gameState = GameStatus.GameState.Walk;
 
-        girlLeftAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
-
-        girlRightAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
+        ChangeAnimStateGirls();
 
         StartCoroutine(WalkRoutine());
     }
 
     private void Fight()
     {
-        gameStatus.gameState = GameStatus.GameState.Fight;
+        if (GameInstance.Instance.levelSpawnManager.isLevelEnd() == true)
+        {
+            Chill();
+        }
+        else
+        {
+            gameStatus.gameState = GameStatus.GameState.Fight;
 
-        girlLeftAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
+            ChangeAnimStateGirls();
 
-        girlRightAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
+            levelSpawnManager.SpawnEnemies();
 
-        levelSpawnManager.SpawnEnemies();
+            girlLeft.FindTarget();
 
-        girlLeft.FindTarget();
+            girlRight.FindTarget();
+        }
+    }
 
-        girlRight.FindTarget();
+    public void Chill()
+    {
+        gameStatus.gameState = GameStatus.GameState.Chill;
+
+        ChangeAnimStateGirls();
+
+        Debug.Log("WE ARE CHILL");
     }
 
     IEnumerator WalkRoutine()
@@ -66,5 +78,12 @@ public class GameplayController : MonoBehaviour
         gameStatus.gameState = GameStatus.GameState.Dead;
 
         GameInstance.Instance.failUiController.GameIsFailed();
+    }
+
+    private void ChangeAnimStateGirls()
+    {
+        girlLeftAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
+
+        girlRightAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
     }
 }

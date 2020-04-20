@@ -14,6 +14,7 @@ public class GameInstance : MonoBehaviour
 
     public FailUIController failUiController;
 
+    public LevelSpawnManager levelSpawnManager;
 
     #region Awake
     public static GameInstance Instance;

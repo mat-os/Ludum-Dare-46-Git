@@ -16,6 +16,11 @@ public class LevelSpawnManager : MonoBehaviour
     private int stageNow;
     private int stagesOverall;
 
+    void Start()
+    {
+        stagesOverall = level1.StagesOnLevel.Length;
+    }
+
     public void SpawnEnemies()
     {
         InitLevel(levelNow);
@@ -39,6 +44,18 @@ public class LevelSpawnManager : MonoBehaviour
             Debug.Log(level1.StagesOnLevel[stageNow].EnemiesToSpawn + " Enemy To Spawn Now");
 
             stageNow++;
+        }
+    }
+
+    public bool isLevelEnd()
+    {
+        if (stageNow == stagesOverall)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
