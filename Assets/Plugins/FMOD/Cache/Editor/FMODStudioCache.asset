@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8763357476444977660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637228183605940407
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7639154218744899766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Fmod Banks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637228189403631702
+  lastModified: 637228183605950407
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -196,16 +214,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6935953685779066171}
-  - {fileID: -4516725094806982397}
-  - {fileID: -2753192884734840019}
+  - {fileID: -8763357476444977660}
+  - {fileID: 6926693583655757409}
   EditorEvents:
   - {fileID: 705935100058051897}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4516725094806982397}
+  - {fileID: -8763357476444977660}
   StringsBanks:
   - {fileID: -6935953685779066171}
-  stringsBankWriteTime: 637228189403631702
+  stringsBankWriteTime: 637228183605950407
   cacheVersion: 3
 --- !u!114 &419141283191939925
 MonoBehaviour:
@@ -241,7 +259,7 @@ MonoBehaviour:
   guid: 750fa99693042443a653256197a4504d
   Banks:
   - {fileID: 948501709673731688}
-  - {fileID: -2753192884734840019}
+  - {fileID: 6926693583655757409}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -393,6 +411,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6926693583655757409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637228183606010411
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8263106161641055045
 MonoBehaviour:
   m_ObjectHideFlags: 0
