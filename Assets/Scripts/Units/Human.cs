@@ -8,7 +8,9 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 {
     [SerializeField]private float damageMin;
     [SerializeField]private float damageMax;
-    [SerializeField] private float attackRate;
+    [SerializeField]private float attackRate;
+
+    private float armorAmount = 0;
 
     [SerializeField] private float HPmax;
 
@@ -118,7 +120,7 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     public void TakeDamage(float damageTaken)
     {
-        hpSysytem.TakeDamage(damageTaken);
+        hpSysytem.TakeDamage(damageTaken - armorAmount);
 
         if (hpSysytem.GetHPAmount() < 0)
         {
@@ -136,5 +138,25 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         enemy = null;
 
         isFight = false;
+    }
+
+    public void ChangeArmor(float armor,float timeOfActive)
+    {
+        StartCoroutine(changeArmorRoutine(armor, timeOfActive));
+    }
+
+    IEnumerator changeArmorRoutine(float armor, float timeOfActive)
+    {
+        armorAmount = armor;
+
+        gameObject.GetComponent<ShildHPBarManager>().ActivateShield();
+
+        yield return  new WaitForSeconds(timeOfActive);
+
+        gameObject.GetComponent<ShildHPBarManager>().DectivateShield();
+
+        armorAmount = 0;
+
+        yield return null;
     }
 }

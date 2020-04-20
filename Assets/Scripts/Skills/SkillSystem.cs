@@ -35,5 +35,10 @@ public class SkillSystem : MonoBehaviour
         {
             skill1.UseSkill();
         }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            skill2.UseSkill();
+        }
     }
 }
