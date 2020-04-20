@@ -6,5 +6,13 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     [SerializeField]
-    private StageData[] stageCount;
+    private StageData[] stagesOnLevel;
+
+    public StageData[] StagesOnLevel
+    {
+        get
+        {
+            return stagesOnLevel;
+        }
+    }
 }

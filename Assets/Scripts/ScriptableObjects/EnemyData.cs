@@ -14,7 +14,9 @@ public class EnemyData : ScriptableObject
     [SerializeField]
     private float HP;
     [SerializeField]
-    private float attackDamage;
+    private float minAttackDamage;
+    [SerializeField]
+    private float maxAttackDamage;
     [SerializeField]
     private float attackRate;
 
@@ -49,11 +51,19 @@ public class EnemyData : ScriptableObject
         }
     }
 
-    public float AttackDamage
+    public float MinAttackDamage
     {
         get
         {
-            return attackDamage;
+            return minAttackDamage;
+        }
+    }
+
+    public float MaxAttackDamage
+    {
+        get
+        {
+            return maxAttackDamage;
         }
     }
     public float AttackRate

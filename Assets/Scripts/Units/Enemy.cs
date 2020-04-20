@@ -13,12 +13,12 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
     IDamagable damageable;
     IHittable hittable;
 
-    public void Initialisation(float _damage, float _attackRate, float _HPMax)
+    public void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
     {
         hpSysytem = GetComponent<HPSysytem>();
         damageSystem = GetComponent<DamageSystem>();
 
-        damageSystem.SetDamage(_damage);
+        damageSystem.SetDamage(_minDamage, _maxDamage);
         damageSystem.SetAttackRate(_attackRate);
 
         hpSysytem.SetMaxHP(_HPMax);
@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
 
     private void EnemyDead()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }

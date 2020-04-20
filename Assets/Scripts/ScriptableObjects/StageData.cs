@@ -6,7 +6,23 @@ using UnityEngine;
 public class StageData : ScriptableObject
 {
     [SerializeField]
-    private int EnemyToSpawn;
+    private int enemiesToSpawn;
     [SerializeField]
-    private EnemyData EnemyType;
+    private EnemyData enemyType;
+
+    public int EnemiesToSpawn
+    {
+        get
+        {
+            return enemiesToSpawn;
+        }
+    }
+
+    public EnemyData EnemyType
+    {
+        get
+        {
+            return enemyType;
+        }
+    }
 }

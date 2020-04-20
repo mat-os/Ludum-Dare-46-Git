@@ -45,7 +45,7 @@ public class Mana
     {
         MANA_MAX = maxMana;
 
-        manaAmount = MANA_MAX - 20;
+        manaAmount = MANA_MAX - 3;
 
         manaRegenAmount = _manaRegenAmount;
     }
@@ -57,7 +57,7 @@ public class Mana
         manaAmount = Mathf.Clamp(manaAmount, 0, MANA_MAX);
 
         //Setup Text
-        textToUpdate.text = MANA_MAX + "/" + manaAmount.ToString("F1");
+        textToUpdate.text = manaAmount.ToString("F1") + "/" +  MANA_MAX;
     }
 
     //Method to spend mana

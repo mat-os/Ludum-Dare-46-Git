@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using UnityEngine;
 
 public class Human : MonoBehaviour, IDamagable, IHittable
 {
-    [SerializeField]private float damage;
+    [SerializeField]private float damageMin;
+    [SerializeField]private float damageMax;
     [SerializeField] private float attackRate;
 
     [SerializeField] private float HPmax;
@@ -13,7 +15,7 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
 
-    private List<Enemy> enemies = new List<Enemy>();
+    public List<Enemy> enemies = new List<Enemy>();
 
     IDamagable damageable;
     IHittable hittable;
@@ -44,13 +46,13 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         }
         #endregion
 
-        Initialisation(damage, attackRate,HPmax);
+        Initialisation(damageMin, damageMax, attackRate,HPmax);
     }
 
 
-    public void Initialisation(float _damage, float _attackRate, float _HPMax)
+    public void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
     {
-        damageSystem.SetDamage(_damage);
+        damageSystem.SetDamage(_minDamage, _maxDamage);
         damageSystem.SetAttackRate(_attackRate);
 
         hpSysytem.SetMaxHP(_HPMax);
@@ -58,20 +60,49 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     void Update()
     {
-        if (enemies.Count == 0)
+        if (GameInstance.Instance.gameStatus.gameState == GameStatus.GameState.Fight)
         {
-            var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
-            foreach (Enemy s in ss)
+            if (enemies.Count == 0 && isFight == false)
             {
-                enemies.Add(s);
+                FindTarget();
+            }
+
+            else if (enemies.Count > 0 && isFight == false)
+            {
+                FightTarget();
+            }
+
+            else if (enemies.Count == 0 && isFight == false)
+            {
+                EndFight();
             }
         }
-        else if(enemies.Count > 0 && isFight == false)
-        {
-            Hit();
+    }
 
-            isFight = true;
+    public void FindTarget()
+    {
+        enemies.Clear();
+
+        var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
+        foreach (Enemy s in ss)
+        {
+            enemies.Add(s);
         }
+    }
+
+    public void FightTarget()
+    {
+        Hit();
+
+        Debug.Log(enemies.Count);
+
+        isFight = true;
+    }
+
+    public void EndFight()
+    {
+        Debug.Log("FIGHT END");
+        //GameInstance.Instance.game
     }
 
     public void TakeHeal(float healAmount)
@@ -86,6 +117,18 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     public void Hit()
     {
-        damageSystem.HitTarget(enemies[0]);
+        damageSystem.HitTarget(enemies[Random.Range(0, enemies.Count)]);
+    }
+
+    public void SetIsFight(bool _isFight)
+    {
+        isFight = _isFight;
+    }
+
+    public void KillEnemy(Enemy targetEnemy)
+    {
+        FindTarget();
+
+        isFight = false;
     }
 }

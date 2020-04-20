@@ -14,8 +14,6 @@ public class HPSysytem : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("SystemInit");
-
         var hpBarObj = Instantiate(HPBarPrefab, HPBarInstancePos.position, Quaternion.identity);
 
         hpBarObj.transform.parent = this.gameObject.transform;
@@ -23,6 +21,8 @@ public class HPSysytem : MonoBehaviour
         hpBar = hpBarObj.GetComponent<HPBar>();
 
         hpBar.UpdateHPBar(HPmax, HPamount);
+
+        StartCoroutine(startRoutine());
     }
 
     public void TakeDamage(float damageAmount)
@@ -30,10 +30,6 @@ public class HPSysytem : MonoBehaviour
         HPamount -= damageAmount;
 
         hpBar.UpdateHPBar(HPmax, HPamount);
-
-        Debug.Log(gameObject.name + " Get damage " + damageAmount);
-
-        Debug.Log(gameObject.name + " Total Health = " + HPamount);
     }
 
     public void TakeHeal(float healAmount)
@@ -59,5 +55,12 @@ public class HPSysytem : MonoBehaviour
     {
         HPmax = _maxHP;
         HPamount = HPmax;
+    }
+
+    IEnumerator startRoutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        hpBar.UpdateHPBar(HPmax, HPamount);
     }
 }

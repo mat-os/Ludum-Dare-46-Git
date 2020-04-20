@@ -6,6 +6,8 @@ public class GameInstance : MonoBehaviour
 {
     public PlayerInput playerInput;
     public ManaController manaController;
+
+    public GameStatus gameStatus;
     
     #region Awake
     public static GameInstance Instance;

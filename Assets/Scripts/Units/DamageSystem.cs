@@ -4,42 +4,42 @@ using UnityEngine;
 
 public class DamageSystem : MonoBehaviour
 {
-    private float damage;
+    private float damageMin;
+    private float damageMax;
     private float attackRate;
+
+    private AnimationController animationController;
 
     void Start()
     {
-        if (gameObject.GetComponent<Human>() != null)
+        if (gameObject.GetComponent<AnimationController>() != null)
         {
-
+            animationController = GetComponent<AnimationController>();
         }
-        else if (gameObject.GetComponent<Enemy>() != null)
-        {
+    }
 
-        }
-
-        Debug.Log("DamageSystemInit");
+    private float RandomizeDamage()
+    {
+        return Random.Range(damageMin, damageMax);
     }
 
     public void HitTarget(Human target)
     {
-        StartCoroutine(AttackHuman(target, damage, attackRate));
+        StartCoroutine(AttackHuman(target, RandomizeDamage(), attackRate));
     }
 
     public void HitTarget(Enemy target)
     {
-        StartCoroutine(AttackEnemy(target, damage, attackRate));
+        StartCoroutine(AttackEnemy(target, RandomizeDamage(), attackRate));
     }
 
     IEnumerator AttackHuman(Human target, float _damage, float _attackRate)
     {
         while (target.GetComponent<HPSysytem>().GetHPAmount() > 0)
         {
-            target.TakeDamage(_damage);
-
-            Debug.Log("Attack!");
-
             yield return new WaitForSeconds(attackRate);
+
+            target.TakeDamage(_damage);
         }
 
         yield  return null;
@@ -47,24 +47,42 @@ public class DamageSystem : MonoBehaviour
 
     IEnumerator AttackEnemy(Enemy target, float _damage, float _attackRate)
     {
-        while (target.GetComponent<HPSysytem>().GetHPAmount() > 0)
+        if (target.GetComponent<HPSysytem>().GetHPAmount() <= 0)
         {
-            target.TakeDamage(_damage);
-
-            Debug.Log("Attack!");
-
-            yield return new WaitForSeconds(attackRate);
+            gameObject.GetComponent<Human>().KillEnemy(target);
+            yield return null;
         }
+        else
+        {
+            while (target.GetComponent<HPSysytem>().GetHPAmount() > 0)
+            {
+                target.TakeDamage(_damage);
 
-        yield return null;
+                PlayAnimation();
+
+                Debug.Log("AttacCKKCKCKCK");
+
+                yield return new WaitForSeconds(attackRate);
+            }
+        }
     }
 
-    public void SetDamage(float _damage)
+    public void SetDamage(float _minDamage, float _maxDamage)
     {
-        damage = _damage;
+        damageMin = _minDamage;
+        damageMax = _maxDamage;
     }
     public void SetAttackRate(float _attackRate)
     {
         attackRate = _attackRate;
     }
+
+    private void PlayAnimation()
+    {
+        if (animationController != null)
+        {
+            animationController.AttackAnimation();
+        }
+    }
+
 }
