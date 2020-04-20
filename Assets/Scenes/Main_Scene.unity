@@ -3639,7 +3639,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   girlLeftAnimationController: {fileID: 614402672}
+  girlRightAnimationController: {fileID: 762061491}
   girlLeft: {fileID: 614402668}
+  girlRight: {fileID: 762061487}
   walkTimeMinMax: {x: 1, y: 2}
   levelSpawnManager: {fileID: 1517999376}
 --- !u!114 &1037254625

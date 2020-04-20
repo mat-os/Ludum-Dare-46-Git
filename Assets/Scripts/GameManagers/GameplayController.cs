@@ -5,9 +5,10 @@ using UnityEngine;
 public class GameplayController : MonoBehaviour
 {
     public AnimationController girlLeftAnimationController;
-    //public AnimationController girlRight;
+    public AnimationController girlRightAnimationController;
 
     public Human girlLeft;
+    public Human girlRight;
 
     public Vector2 walkTimeMinMax;
 
@@ -31,6 +32,8 @@ public class GameplayController : MonoBehaviour
 
         girlLeftAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
 
+        girlRightAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
+
         StartCoroutine(WalkRoutine());
     }
 
@@ -40,9 +43,13 @@ public class GameplayController : MonoBehaviour
 
         girlLeftAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
 
+        girlRightAnimationController.changeAnimState("GameState", (int)gameStatus.gameState);
+
         levelSpawnManager.SpawnEnemies();
 
         girlLeft.FindTarget();
+
+        girlRight.FindTarget();
     }
 
     IEnumerator WalkRoutine()
@@ -50,6 +57,8 @@ public class GameplayController : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(walkTimeMinMax.x, walkTimeMinMax.y));
 
         Fight();
+
+        yield return null;
     }
 
     public void GameFail()

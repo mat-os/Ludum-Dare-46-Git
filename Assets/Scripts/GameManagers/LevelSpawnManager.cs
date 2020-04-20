@@ -19,6 +19,8 @@ public class LevelSpawnManager : MonoBehaviour
     public void SpawnEnemies()
     {
         InitLevel(levelNow);
+
+        Debug.Log("SSSPPPPWWWAAANN ENEMY");
     }
     
     private void InitLevel(int level)
