@@ -37,7 +37,7 @@ public class GameplayController : MonoBehaviour
         StartCoroutine(WalkRoutine());
     }
 
-    public void Fight()
+    private void Fight()
     {
         gameStatus.gameState = GameStatus.GameState.Fight;
 

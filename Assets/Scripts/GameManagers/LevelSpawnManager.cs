@@ -13,14 +13,14 @@ public class LevelSpawnManager : MonoBehaviour
     public SpawnEnemyOnStageSystem spawnEnemySys;
 
     private int levelNow;
-    private int stageNow = 0;
+    private int stageNow;
     private int stagesOverall;
 
     public void SpawnEnemies()
     {
         InitLevel(levelNow);
 
-        Debug.Log("SSSPPPPWWWAAANN ENEMY");
+        Debug.Log("Level= " + levelNow + "Stage= " + stageNow + "SSSPPPPWWWAAANN ENEMY");
     }
     
     private void InitLevel(int level)

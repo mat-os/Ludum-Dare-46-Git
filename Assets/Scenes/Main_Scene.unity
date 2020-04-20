@@ -2932,6 +2932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691012003}
   - component: {fileID: 691012002}
+  - component: {fileID: 691012004}
   m_Layer: 0
   m_Name: Bg
   m_TagString: Untagged
@@ -3003,6 +3004,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &691012004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691012001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a08c1db4a0d9e42aae09ca8efd4c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSpeed: 0.2
+  wallSprites:
+  - {fileID: 21300000, guid: 95a12c3edc0397e44b97d2daf02a968c, type: 3}
+  - {fileID: 21300000, guid: 26242200a982d9446b80726633eaaba2, type: 3}
 --- !u!1 &762061485
 GameObject:
   m_ObjectHideFlags: 0

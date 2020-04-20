@@ -31,8 +31,7 @@ public class HPSysytem : MonoBehaviour
 
         if (hpBar == null)
         {
-            Debug.Log("NULLLLLLLLLLLL   " + gameObject.name);
-
+            
         }
         else
         {

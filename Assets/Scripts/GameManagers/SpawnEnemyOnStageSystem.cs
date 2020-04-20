@@ -30,7 +30,7 @@ public class SpawnEnemyOnStageSystem : MonoBehaviour
 
             currentEnemy.GetComponent<Enemy>().Initialisation(enemyData.MinAttackDamage, enemyData.MaxAttackDamage, enemyData.AttackRate, enemyData.HPAmount);
 
-
+            Debug.Log("Spawn 1 enemy!!!");
         }
     }
 

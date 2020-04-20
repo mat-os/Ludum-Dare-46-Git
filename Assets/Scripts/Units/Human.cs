@@ -105,7 +105,10 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     {
         Debug.Log("FIGHT END");
 
-        GameInstance.Instance.gameplayController.Walk();
+        if (GameInstance.Instance.gameStatus.gameState != GameStatus.GameState.Walk)
+        {
+            GameInstance.Instance.gameplayController.Walk();
+        }
     }
 
     public void TakeHeal(float healAmount)
@@ -130,8 +133,6 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     public void KillEnemy(Enemy targetEnemy)
     {
-        Debug.Log("KILL!!!!!!!!!!!!!!!!!!!");
-
         enemy = null;
 
         isFight = false;
