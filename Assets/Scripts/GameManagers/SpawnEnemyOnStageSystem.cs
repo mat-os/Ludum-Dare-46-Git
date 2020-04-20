@@ -41,7 +41,6 @@ public class SpawnEnemyOnStageSystem : MonoBehaviour
         switch (howMuchToSpawn)
         {
             case 1:
-                Debug.Log("AAAAAAA");
                 positionList.Add(enemySpawnPosCenter.position);
                 break;
 

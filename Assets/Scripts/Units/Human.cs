@@ -84,8 +84,6 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         {
             enemy = ss.First();
 
-            Debug.Log(ss.Count());
-
             FightTarget();
 
             ss = null;
