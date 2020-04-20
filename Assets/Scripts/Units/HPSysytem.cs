@@ -21,9 +21,7 @@ public class HPSysytem : MonoBehaviour
         hpBar = hpBarObj.GetComponent<HPBar>();
 
         hpBar.UpdateHPBar(HPmax, HPamount);
-
-        Debug.Log(hpBar.name + gameObject.name);
-
+        
         StartCoroutine(startRoutine());
     }
 
@@ -31,7 +29,15 @@ public class HPSysytem : MonoBehaviour
     {
         HPamount -= damageAmount;
 
-        hpBar.UpdateHPBar(HPmax, HPamount);
+        if (hpBar == null)
+        {
+            Debug.Log("NULLLLLLLLLLLL   " + gameObject.name);
+
+        }
+        else
+        {
+            hpBar.UpdateHPBar(HPmax, HPamount);
+        }
     }
 
     public void TakeHeal(float healAmount)
