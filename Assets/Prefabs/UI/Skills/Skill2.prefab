@@ -16,25 +16,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3f9725eee02df494faa62ade0238db9c,
+      objectReference: {fileID: 21300000, guid: f3f517cdb3a21324888b8c0ba9c875e3,
         type: 3}
     - target: {fileID: 5555318432435150524, guid: c53ec66d9634ed744bb0d6a82d7d2fb6,
         type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3f9725eee02df494faa62ade0238db9c,
+      objectReference: {fileID: 21300000, guid: f3f517cdb3a21324888b8c0ba9c875e3,
         type: 3}
     - target: {fileID: 5555318432435150524, guid: c53ec66d9634ed744bb0d6a82d7d2fb6,
         type: 3}
       propertyPath: m_SpriteState.m_SelectedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3f9725eee02df494faa62ade0238db9c,
+      objectReference: {fileID: 21300000, guid: f3f517cdb3a21324888b8c0ba9c875e3,
         type: 3}
     - target: {fileID: 5555318432435150524, guid: c53ec66d9634ed744bb0d6a82d7d2fb6,
         type: 3}
       propertyPath: m_SpriteState.m_DisabledSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7f0e0f337342f694dbda99bc62d3c951,
+      objectReference: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863,
         type: 3}
     - target: {fileID: 5979732665251502782, guid: c53ec66d9634ed744bb0d6a82d7d2fb6,
         type: 3}
