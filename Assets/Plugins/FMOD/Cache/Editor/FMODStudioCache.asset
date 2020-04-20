@@ -17,7 +17,7 @@ MonoBehaviour:
   lastModified: 637228189403681667
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7329018344724144801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Fmod Banks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637228189403631702
+  lastModified: 637228183605950407
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -160,16 +160,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6935953685779066171}
-  - {fileID: 1223499329049251769}
-  - {fileID: -7639154218744899766}
+  - {fileID: 5347465348215692759}
+  - {fileID: 6355831302648789671}
   EditorEvents:
   - {fileID: 705935100058051897}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1223499329049251769}
+  - {fileID: 5347465348215692759}
   StringsBanks:
   - {fileID: -6935953685779066171}
-  stringsBankWriteTime: 637228189403631702
+  stringsBankWriteTime: 637228183605950407
   cacheVersion: 3
 --- !u!114 &419141283191939925
 MonoBehaviour:
@@ -205,7 +205,7 @@ MonoBehaviour:
   guid: 750fa99693042443a653256197a4504d
   Banks:
   - {fileID: 948501709673731688}
-  - {fileID: -7639154218744899766}
+  - {fileID: 6355831302648789671}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   lastModified: 637228189403621708
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &2635871800996233906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +285,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &5347465348215692759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637228183605940407
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5909475808837193696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +336,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/MyMusic.bank
   SubDir: 
   lastModified: 637228189403681667
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6355831302648789671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637228183606010411
   LoadResult: 0
   FileSizes: []
   Exists: 1
