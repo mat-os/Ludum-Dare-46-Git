@@ -14,6 +14,8 @@ public class ChoseHealTarget : MonoBehaviour
     [SerializeField] private Human rightHuman;
 
     public static Human targetToHeal;
+
+    public static Human[] bothHuman;
     
     public void ChangeTargetToLeft()
     {
@@ -37,5 +39,11 @@ public class ChoseHealTarget : MonoBehaviour
     void Start()
     {
         targetToHeal = leftHuman;
+
+        bothHuman = new Human[2];
+
+        bothHuman[0] = leftHuman;
+        bothHuman[1] = rightHuman;
+
     }
 }

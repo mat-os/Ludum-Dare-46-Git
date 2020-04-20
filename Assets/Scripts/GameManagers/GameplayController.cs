@@ -14,6 +14,9 @@ public class GameplayController : MonoBehaviour
 
     public LevelSpawnManager levelSpawnManager;
 
+
+    public ChillManager сhillManager;
+
     private GameStatus gameStatus;
 
     void Start()
@@ -60,6 +63,8 @@ public class GameplayController : MonoBehaviour
         gameStatus.gameState = GameStatus.GameState.Chill;
 
         ChangeAnimStateGirls();
+
+        сhillManager.ShowAltar();
 
         Debug.Log("WE ARE CHILL");
     }

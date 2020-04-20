@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ChillManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Altar;
 
-    // Update is called once per frame
-    void Update()
+    public void ShowAltar()
     {
-        
+        Altar.SetActive(true);
     }
 }
