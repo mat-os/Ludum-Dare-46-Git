@@ -64,43 +64,32 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     {
         if (GameInstance.Instance.gameStatus.gameState == GameStatus.GameState.Fight)
         {
-            if (enemies.Count == 0 && isFight == false)
+            if (enemy == null && isFight == false)
             {
                 FindTarget();
-            }
-
-            else if (enemies.Count > 0 && isFight == false)
-            {
-                FightTarget();
-            }
-
-            else if (enemies.Count == 0 && isFight == false)
-            {
-                EndFight();
             }
         }
     }
 
     public void FindTarget()
     {
-        //var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
-
-        //foreach (Enemy s in ss)
-        //{
-        //    if (s.isAlive)
-        //    {
-        //        Debug.Log("FIND ENEMY" + s.name);
-        //        enemies.Add(s);
-        //    }
-        //}
-
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
 
-        enemy = ss.First();
+        if (ss.First() != null)
+        {
+            enemy = ss.First();
 
-        Debug.Log(ss.Count());
+            Debug.Log(ss.Count());
 
-        ss = null;
+            FightTarget();
+
+            ss = null;
+        }
+        else
+        {
+            EndFight();
+        }
+
     }
 
     public void FightTarget()
@@ -128,19 +117,14 @@ public class Human : MonoBehaviour, IDamagable, IHittable
 
     public void Hit()
     {
-        damageSystem.HitTarget(enemies[Random.Range(0, enemies.Count)]);
-    }
-
-    public void SetIsFight(bool _isFight)
-    {
-        isFight = _isFight;
+        damageSystem.HitTarget(enemy);
     }
 
     public void KillEnemy(Enemy targetEnemy)
     {
-        enemies = null;
-
         Debug.Log("KILL!!!!!!!!!!!!!!!!!!!");
+
+        enemy = null;
 
         isFight = false;
     }
