@@ -41,7 +41,7 @@ public class DamageSystem : MonoBehaviour
 
     IEnumerator AttackHuman(Human target, float _damage, float _attackRate)
     {
-        yield return new WaitForSeconds(Random.Range(0.2f, 1.5f));
+        yield return new WaitForSeconds(Random.Range(0.1f, 0.5f));
 
         while (target.GetComponent<HPSysytem>().GetHPAmount() > 0)
         {

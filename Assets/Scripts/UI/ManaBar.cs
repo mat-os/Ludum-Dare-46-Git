@@ -28,6 +28,11 @@ public class ManaBar : MonoBehaviour
         return mana.GetManaAmount();
     }
 
+    public void RestorAllMana()
+    {
+        mana.RestoreMana(1000);
+    }
+
     private void FixedUpdate()
     {
         if (mana != null)
@@ -76,7 +81,14 @@ public class Mana
     //Method to restore mana
     public void RestoreMana(int amount)
     {
-        manaAmount += amount;
+        if (manaAmount + amount < MANA_MAX)
+        {
+            manaAmount += amount;
+        }
+        else
+        {
+            manaAmount = MANA_MAX;
+        }
     }
 
     public float GetManaNormalized()

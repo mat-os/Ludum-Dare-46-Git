@@ -7,21 +7,20 @@ public class EnemyAnimController : MonoBehaviour
 {
     public SpriteRenderer sr;
 
-    private GameStatus gameStatus;
-
-    private Animator animator;
+    public Animator animator;
 
     void Start()
     {
-        gameStatus = GameInstance.Instance.gameStatus;
+        sr.color = new Color(1,1,1,0);
 
-        animator = GetComponent<Animator>();
+        sr.DOFade(1, 0.5f);
     }
 
     public void AttackAnimation()
     {
         animator.SetTrigger("Attack");
     }
+
     public void DeadAnim()
     {
         sr.DOFade(0,0.5f);

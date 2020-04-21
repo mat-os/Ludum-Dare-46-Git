@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class LevelSpawnManager : MonoBehaviour
 {
-    public LevelData level1;
-    public LevelData level2;
-    public LevelData level3;
-    public LevelData level4;
-    public LevelData level5;
+    public LevelData[] levels;
 
     public SpawnEnemyOnStageSystem spawnEnemySys;
+
+    public GameObject EndGameUI;
 
     private int levelNow;
     private int stageNow;
@@ -18,30 +16,22 @@ public class LevelSpawnManager : MonoBehaviour
 
     void Start()
     {
-        stagesOverall = level1.StagesOnLevel.Length;
+        stagesOverall = levels[1].StagesOnLevel.Length;
     }
 
     public void SpawnEnemies()
     {
         InitLevel(levelNow);
-
-        Debug.Log("Level= " + levelNow + "Stage= " + stageNow + "SSSPPPPWWWAAANN ENEMY");
     }
     
     private void InitLevel(int level)
     {
-        stagesOverall = level1.StagesOnLevel.Length;
-
-        Debug.Log(stagesOverall + " Stages on level");
+        stagesOverall = levels[level].StagesOnLevel.Length;
 
         if (stageNow < stagesOverall)
         {
-            Debug.Log(stageNow + " Stage Now");
-
-            spawnEnemySys.SpawnEnemy(level1.StagesOnLevel[stageNow].EnemyType,
-                level1.StagesOnLevel[stageNow].EnemiesToSpawn);
-
-            Debug.Log(level1.StagesOnLevel[stageNow].EnemiesToSpawn + " Enemy To Spawn Now");
+            spawnEnemySys.SpawnEnemy(levels[level].StagesOnLevel[stageNow].EnemyType,
+                levels[level].StagesOnLevel[stageNow].EnemiesToSpawn);
 
             stageNow++;
         }
@@ -51,6 +41,15 @@ public class LevelSpawnManager : MonoBehaviour
     {
         if (stageNow == stagesOverall)
         {
+            levelNow++;
+            stageNow = 0;
+
+            if (levelNow == 2)
+            {
+                EndGameUI.SetActive(true);
+            }
+            Debug.Log("levelEND!!!!!!!!!!!!!!!!!!!    " + levelNow);
+
             return true;
         }
         else

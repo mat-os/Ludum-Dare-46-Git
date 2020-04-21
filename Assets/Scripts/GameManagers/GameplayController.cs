@@ -64,7 +64,7 @@ public class GameplayController : MonoBehaviour
 
         ChangeAnimStateGirls();
 
-        сhillManager.ShowAltar();
+        сhillManager.StartChill();
 
         Debug.Log("WE ARE CHILL");
     }

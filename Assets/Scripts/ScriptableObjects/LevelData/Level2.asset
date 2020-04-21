@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7043c5a1267a65b43a3cceba8a7c5b8e, type: 3}
-  m_Name: Level4
+  m_Name: Level2
   m_EditorClassIdentifier: 
-  stageCount:
-  - {fileID: 11400000, guid: 5c3bdca2b92e19343a2a47797347703d, type: 2}
-  - {fileID: 11400000, guid: 5c3bdca2b92e19343a2a47797347703d, type: 2}
-  - {fileID: 11400000, guid: 5c3bdca2b92e19343a2a47797347703d, type: 2}
+  stagesOnLevel:
+  - {fileID: 11400000, guid: 87825bc58afa4db4885b10281dee7a9c, type: 2}
+  - {fileID: 11400000, guid: 31ad692dccff80640990cfb34b909338, type: 2}
+  - {fileID: 11400000, guid: d5715e34ad653324995ebf7ef6063572, type: 2}

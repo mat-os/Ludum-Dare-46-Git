@@ -23,4 +23,9 @@ public class ManaController : MonoBehaviour
     {
         return manaBar.GetManaAmount();
     }
+
+    public void RestoreAllMana()
+    {
+        manaBar.RestorAllMana();
+    }
 }
