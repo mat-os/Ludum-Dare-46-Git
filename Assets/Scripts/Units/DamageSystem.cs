@@ -23,54 +23,61 @@ public class DamageSystem : MonoBehaviour
             enemyAnimController = GetComponent<EnemyAnimController>();
         }
     }
+    private void PlayAnimation()
+    {
+        if (animationController != null)
+        {
+            animationController.AttackAnimation();
+        }
+    }
 
     private float RandomizeDamage()
     {
         return Random.Range(damageMin, damageMax);
     }
 
-    public void HitTarget(Human target)
+    public void HitTarget(Entity target)
     {
-        StartCoroutine(AttackHuman(target, RandomizeDamage(), attackRate));
+        StartCoroutine(AttackEntity(target));
     }
 
-    public void HitTarget(Enemy target)
+    IEnumerator AttackEntity(Entity target)
     {
-        StartCoroutine(AttackEnemy(target, RandomizeDamage(), attackRate));
-    }
-
-    IEnumerator AttackHuman(Human target, float _damage, float _attackRate)
-    {
-        yield return new WaitForSeconds(Random.Range(0.1f, 0.5f));
-
-        while (target.GetComponent<HPSysytem>().GetHPAmount() > 0)
+        if (target is Enemy)
         {
-            yield return new WaitForSeconds(_attackRate);
+            while (target.GetIsAlive() == true)
+            {
+                yield return new WaitForSeconds(attackRate);
 
-            target.TakeDamage(_damage);
+                target.TakeDamage(RandomizeDamage());
 
-            enemyAnimController.AttackAnimation();
+                PlayAnimation();
+            }
+
+            gameObject.GetComponent<Human>().KillEnemy(target.GetComponent<Enemy>());
+
+            yield return null;
         }
 
-        yield  return null;
-    }
-
-    IEnumerator AttackEnemy(Enemy target, float _damage, float _attackRate)
-    {
-        while (target.isAlive == true)
+        else if (target is Human)
         {
-            target.TakeDamage(_damage);
+            Debug.Log("Hit Human");
 
-            PlayAnimation();
+            yield return new WaitForSeconds(Random.Range(0.1f, 0.5f));
 
-            yield return new WaitForSeconds(_attackRate);
+            while (target.GetIsAlive() == true)
+            {
+                yield return new WaitForSeconds(attackRate);
+
+                target.TakeDamage(RandomizeDamage());
+
+                enemyAnimController.AttackAnimation();
+            }
+
+            yield return null;
         }
-
-        gameObject.GetComponent<Human>().KillEnemy(target);
-
-        yield return null;
     }
-
+    
     public void SetDamage(float _minDamage, float _maxDamage)
     {
         damageMin = _minDamage;
@@ -81,12 +88,6 @@ public class DamageSystem : MonoBehaviour
         attackRate = _attackRate;
     }
 
-    private void PlayAnimation()
-    {
-        if (animationController != null)
-        {
-            animationController.AttackAnimation();
-        }
-    }
+
 
 }

@@ -3,32 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SimpleHeal : Skill
+
+public class AOEHealWithDelay : Skill
 {
-    [SerializeField] private float levelOfSkill;
+    [SerializeField] private float healAmount;
+    [SerializeField] private float healTime;
 
-    [SerializeField]private float healAmount;
-    [SerializeField]private float manacost;
-    [SerializeField]private float cooldownTime;
+    [SerializeField] private float manacost;
+    [SerializeField] private float cooldownTime;
 
-    [SerializeField]private Sprite skillSprite;
-    [SerializeField]private string skillName;
-    [SerializeField]private string skillDescription;
-
+    [SerializeField] private string skillName;
+    [SerializeField] private string skillDescription;
 
     private bool isSkillReady = true;
+
+    public Sprite skillSprite;
 
     public override void UseSkill()
     {
         if (GameInstance.Instance.manaController.GetManaAmount() > manacost && isSkillReady)
         {
-            ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
+            StartCoroutine(HealWithDelayRoutine(healTime, healAmount));
 
             GameInstance.Instance.manaController.SpendMana(manacost);
 
             StartCoroutine(countCooldownRoutine(cooldownTime));
 
             isSkillReady = false;
+        }
+    }
+
+    IEnumerator HealWithDelayRoutine(float HealTime, float healAmount)
+    {
+        float t = 0;
+
+        while (t < HealTime)
+        {
+            yield return new WaitForFixedUpdate();
+
+            foreach (var human in ChoseHealTarget.bothHuman)
+            {
+                human.TakeHeal(healAmount);
+            }
+
+            t += Time.fixedDeltaTime;
         }
     }
 
@@ -43,7 +61,6 @@ public class SimpleHeal : Skill
     {
         return skillSprite;
     }
-
     public override string GetSkillName()
     {
         return skillName;

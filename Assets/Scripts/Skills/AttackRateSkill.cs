@@ -1,28 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class SimpleHeal : Skill
+public class AttackRateSkill : Skill
 {
-    [SerializeField] private float levelOfSkill;
+    [SerializeField] private float AttackRateAmount;
+    [SerializeField] private float timeOfEffect;
+    [SerializeField] private float manacost;
+    [SerializeField] private float cooldownTime;
 
-    [SerializeField]private float healAmount;
-    [SerializeField]private float manacost;
-    [SerializeField]private float cooldownTime;
-
-    [SerializeField]private Sprite skillSprite;
-    [SerializeField]private string skillName;
-    [SerializeField]private string skillDescription;
-
+    [SerializeField] private string skillName;
+    [SerializeField] private string skillDescription;
 
     private bool isSkillReady = true;
+
+    public Sprite skillSprite;
 
     public override void UseSkill()
     {
         if (GameInstance.Instance.manaController.GetManaAmount() > manacost && isSkillReady)
         {
-            ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
+            ChoseHealTarget.targetToHeal.GetEffectController().ChangeAttackRate(AttackRateAmount, timeOfEffect);
 
             GameInstance.Instance.manaController.SpendMana(manacost);
 
@@ -43,7 +41,6 @@ public class SimpleHeal : Skill
     {
         return skillSprite;
     }
-
     public override string GetSkillName()
     {
         return skillName;

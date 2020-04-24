@@ -9,10 +9,12 @@ public class SimpleAOEHeal : Skill
     [SerializeField] private float manacost;
     [SerializeField] private float cooldownTime;
 
+    [SerializeField] private string skillName;
+    [SerializeField] private string skillDescription;
+
     private bool isSkillReady = true;
 
-    public Button SkillButton;
-    public Sprite cooldownSprite;
+    public Sprite skillSprite;
 
     public override void UseSkill()
     {
@@ -27,9 +29,6 @@ public class SimpleAOEHeal : Skill
 
             StartCoroutine(countCooldownRoutine(cooldownTime));
 
-            SkillButton.image.sprite = cooldownSprite;
-            SkillButton.image.color = Color.grey;
-
             isSkillReady = false;
         }
     }
@@ -38,9 +37,19 @@ public class SimpleAOEHeal : Skill
     {
         yield return new WaitForSeconds(_cooldownTime);
 
-        SkillButton.image.sprite = cooldownSprite;
-        SkillButton.image.color = Color.white;
-
         isSkillReady = true;
+    }
+
+    public override Sprite getSprite()
+    {
+        return skillSprite;
+    }
+    public override string GetSkillName()
+    {
+        return skillName;
+    }
+    public override string GetSkillDescription()
+    {
+        return skillDescription;
     }
 }

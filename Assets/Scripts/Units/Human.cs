@@ -4,27 +4,43 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using UnityEngine;
 
-public class Human : MonoBehaviour, IDamagable, IHittable
+public class Human : Entity, IDamagable, IHittable
 {
     [SerializeField]private float damageMin;
     [SerializeField]private float damageMax;
     [SerializeField]private float attackRate;
 
-    private float armorAmount = 0;
+    [SerializeField] private float armorAmount;
 
-    [SerializeField] private float HPmax;
+    [SerializeField]private float HPmax;
 
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
+    private EffectController effectController;
 
-    //public List<Enemy> enemies = new List<Enemy>();
+    public Entity enemyToFight;
 
-    public Enemy enemy;
+    public List<Enemy> Enemies;
 
     IDamagable damageable;
     IHittable hittable;
 
     private bool isFight;
+
+    public EffectController GetEffectController()
+    {
+        return effectController;
+    }
+
+    public float GetAttackRate()
+    {
+        return attackRate;
+    }
+    public void SetAttackRate(float newRate)
+    {
+        attackRate = newRate;
+        damageSystem.SetAttackRate(newRate);
+    }
 
     void Start()
     {
@@ -39,6 +55,11 @@ public class Human : MonoBehaviour, IDamagable, IHittable
             gameObject.AddComponent<DamageSystem>();
         }
 
+        if (gameObject.GetComponent<EffectController>() == null)
+        {
+            gameObject.AddComponent<EffectController>();
+        }
+
         if (hpSysytem == null)
         {
             hpSysytem = GetComponent<HPSysytem>();
@@ -48,13 +69,18 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         {
             damageSystem = GetComponent<DamageSystem>();
         }
+
+        if (effectController == null)
+        {
+            effectController = GetComponent<EffectController>();
+        }
         #endregion
 
         Initialisation(damageMin, damageMax, attackRate,HPmax);
     }
 
 
-    public void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
+    public override void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
     {
         damageSystem.SetDamage(_minDamage, _maxDamage);
         damageSystem.SetAttackRate(_attackRate);
@@ -66,39 +92,37 @@ public class Human : MonoBehaviour, IDamagable, IHittable
     {
         if (GameInstance.Instance.gameStatus.gameState == GameStatus.GameState.Fight)
         {
-            if (enemy == null && isFight == false)
+            if (Enemies.Count() == 0 && isFight == false)
             {
                 FindTarget();
+            }
 
-                if (enemy == null)
-                {
-                    EndFight();
-                }
+            else if(enemyToFight != null && isFight == false)
+            {
+                FightTarget();
             }
         }
     }
 
     public void FindTarget()
     {
-        var ss = FindObjectsOfType<MonoBehaviour>().OfType<Enemy>();
+        Debug.Log("FIND");
 
-        if (ss.Count() > 0)
+        Enemies = new List<Enemy>(FindObjectsOfType<Enemy>());
+
+        if (Enemies.Count() == 0)
         {
-            enemy = ss.First();
-
-            FightTarget();
-
-            ss = null;
+            EndFight();
         }
         else
         {
-            EndFight();
+            enemyToFight = Enemies[0];
         }
     }
 
     public void FightTarget()
     {
-        Hit();
+        HitEntity();
 
         isFight = true;
     }
@@ -118,45 +142,42 @@ public class Human : MonoBehaviour, IDamagable, IHittable
         hpSysytem.TakeHeal(healAmount);
     }
 
-    public void TakeDamage(float damageTaken)
+    public override void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken - armorAmount);
 
         if (hpSysytem.GetHPAmount() < 0)
         {
-            GameInstance.Instance.gameplayController.GameFail();
+            Dead();
         }
     }
 
-    public void Hit()
+    public void HitEntity()
     {
-        damageSystem.HitTarget(enemy);
+        damageSystem.HitTarget(enemyToFight);
     }
 
-    public void KillEnemy(Enemy targetEnemy)
+    public void KillEnemy(Entity targetEnemy)
     {
-        enemy = null;
+        enemyToFight = null;
+
+        Enemies.Clear();
 
         isFight = false;
     }
-
-    public void ChangeArmor(float armor,float timeOfActive)
+    
+    public override void Dead()
     {
-        StartCoroutine(changeArmorRoutine(armor, timeOfActive));
+        GameInstance.Instance.gameplayController.GameFail();
     }
 
-    IEnumerator changeArmorRoutine(float armor, float timeOfActive)
+    public float GetArmorAmount()
     {
-        armorAmount = armor;
+        return armorAmount;
+    }
 
-        gameObject.GetComponent<ShildHPBarManager>().ActivateShield();
-
-        yield return  new WaitForSeconds(timeOfActive);
-
-        gameObject.GetComponent<ShildHPBarManager>().DectivateShield();
-
-        armorAmount = 0;
-
-        yield return null;
+    public void SetArmorAmount(float _newArmor)
+    {
+        armorAmount = _newArmor;
     }
 }

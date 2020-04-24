@@ -11,26 +11,17 @@ public class SpawnEnemyOnStageSystem : MonoBehaviour
 
     public float distanceForUpAndDown;
 
-    //private Vector3[] posinitions;
-
     private List<Vector3>positionList = new List<Vector3>();
-
 
     public void SpawnEnemy(EnemyData enemyData, int howMuchToSpawn)
     {
-        Debug.Log("Spawn!");
-
         for (int i = 0; i < howMuchToSpawn; i++)
         {
-            // Creates an instance of the prefab at the current spawn point.
             GameObject currentEnemy = Instantiate(enemyData.EnemyGO, ChooseSpawnPos(howMuchToSpawn)[i], Quaternion.identity);
 
-            // Sets the name of the instantiated entity to be the string defined in the ScriptableObject and then appends it with a unique number. 
             currentEnemy.name = enemyData.EnemyName;
 
             currentEnemy.GetComponent<Enemy>().Initialisation(enemyData.MinAttackDamage, enemyData.MaxAttackDamage, enemyData.AttackRate, enemyData.HPAmount);
-
-            Debug.Log("Spawn 1 enemy!!!");
         }
     }
 

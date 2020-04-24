@@ -4,41 +4,66 @@ using UnityEngine;
 
 public class SkillSystem : MonoBehaviour
 {
-    public Skill skill1;
-    public Skill skill2;
-    public Skill skill3;
-    public Skill passiveSkill;
-    public Skill skill4;
-    
-    public void UseSkill(int skillNumber)
+    //0 - стартовые скилы
+
+    public List<Skill[]> SkillsList = new List<Skill[]>();
+
+
+    [SerializeField] private Skill[] startSkills;
+
+    [SerializeField] private Skill[] skillsLevel1;
+    [SerializeField] private Skill[] skillsLevel2;
+    [SerializeField] private Skill[] skillsLevel3;
+    [SerializeField] private Skill[] passiveSkills;
+    [SerializeField] private Skill[] skillsLevel4;
+
+    void Start()
     {
-        switch (skillNumber)
-        {
-            case 1:
-                skill1.UseSkill();
-                break;
-            case 2:
-                skill2.UseSkill();
-                break;
-            case 3:
-                skill3.UseSkill();
-                break;
-            case 4:
-                skill4.UseSkill();
-                break;
-        }
+        SkillsList.Add(startSkills);
     }
 
-    void Update()
+    public Skill getStartSkills(int SkillNumber)
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        return startSkills[SkillNumber];
+    }
+
+    public Skill GetRandomSkillOfLevel(int level)
+    {
+        switch (level)
         {
-            skill1.UseSkill();
+            case 1:
+                return skillsLevel1[generateRandomNumber(0, skillsLevel1.Length)];
+            case 2:
+                return skillsLevel2[generateRandomNumber(0, skillsLevel2.Length)];
+            case 3:
+                return skillsLevel3[generateRandomNumber(0, skillsLevel3.Length)];
+            case 4:
+                return passiveSkills[generateRandomNumber(0, passiveSkills.Length)];
+            case 5:
+                return skillsLevel4[generateRandomNumber(0, skillsLevel4.Length)];
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        return null;
+    }
+
+
+
+    private static int lastRandomNumber;
+
+    public static int generateRandomNumber(int min, int max)
+    {
+
+        int result = Random.Range(min, max);
+
+        if (result == lastRandomNumber)
         {
-            skill2.UseSkill();
+
+            return generateRandomNumber(min, max);
+
         }
+
+        lastRandomNumber = result;
+        return result;
+
     }
 }

@@ -8,12 +8,8 @@ public class ChillManager : MonoBehaviour
 
     public GameObject NewSkillUI;
 
-    public GameObject newSkillElement;
-
     public void ActivateSkill()
     {
-        newSkillElement.SetActive(true);
-
         NewSkillUI.SetActive(false);
 
         Altar.SetActive(false);

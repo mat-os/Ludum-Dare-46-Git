@@ -14,7 +14,6 @@ public class GameplayController : MonoBehaviour
 
     public LevelSpawnManager levelSpawnManager;
 
-
     public ChillManager сhillManager;
 
     private GameStatus gameStatus;
