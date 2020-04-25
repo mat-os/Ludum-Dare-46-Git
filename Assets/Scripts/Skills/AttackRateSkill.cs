@@ -12,7 +12,9 @@ public class AttackRateSkill : Skill
     [SerializeField] private string skillName;
     [SerializeField] private string skillDescription;
 
-    public Sprite skillSprite;
+    [SerializeField] private Sprite skillSprite;
+    [SerializeField] private Sprite mouseOverSprite;
+    [SerializeField] private Sprite isUsedSprite;
 
     public override void UseSkill()
     {
@@ -41,5 +43,15 @@ public class AttackRateSkill : Skill
     public override float GetSkillCooldownTime()
     {
         return cooldownTime;
+    }
+
+    public override Sprite getMouseOverSprite()
+    {
+        return mouseOverSprite;
+    }
+
+    public override Sprite getIsUsedSprite()
+    {
+        return isUsedSprite;
     }
 }

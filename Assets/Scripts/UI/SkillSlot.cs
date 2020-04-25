@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SkillSlot : MonoBehaviour, IPointerClickHandler
+public class SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
 {
     private Skill mySkill;
 
@@ -63,6 +63,8 @@ public class SkillSlot : MonoBehaviour, IPointerClickHandler
         mySkill.SetIsSkillReady(false);
 
         img.color = Color.grey;
+
+        img.sprite = mySkill.getIsUsedSprite();
     }
     public void TurnOnSkill()
     {
@@ -70,15 +72,18 @@ public class SkillSlot : MonoBehaviour, IPointerClickHandler
 
         img.color = Color.white;
 
+        img.sprite = mySkill.getSprite();
     }
-    public void OnPointerClick(PointerEventData eventData)
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        //check once again if the player has enough xp/levels, and that this skill has not already been selected
-        //if (player.playerLevel >= mySkill.requiredLevel && player.xp >= mySkill.requiredXp && !mySkill.beenSelected)
-        //{
-        //    player.AdjustSkill(mySkill);//this method actually changes the values of the abilities
-        //    mySkill.beenSelected = true;
-        //    manager.UpdateAllSlots();
-        //}
+        img.sprite = mySkill.getMouseOverSprite();
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        img.sprite = mySkill.getSprite();
+
     }
 }

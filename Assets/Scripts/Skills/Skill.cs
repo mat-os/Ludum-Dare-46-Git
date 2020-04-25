@@ -12,6 +12,10 @@ public abstract class Skill : MonoBehaviour
 
     public abstract Sprite getSprite();
 
+    public abstract Sprite getMouseOverSprite();
+
+    public abstract Sprite getIsUsedSprite();
+
     public abstract string GetSkillName();
 
     public abstract string GetSkillDescription();

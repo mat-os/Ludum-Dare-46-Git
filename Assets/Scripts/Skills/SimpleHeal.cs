@@ -11,9 +11,13 @@ public class SimpleHeal : Skill
     [SerializeField]private float manacost;
     [SerializeField]private float cooldownTime;
 
-    [SerializeField]private Sprite skillSprite;
     [SerializeField]private string skillName;
     [SerializeField]private string skillDescription;
+
+    [SerializeField] private Sprite skillSprite;
+    [SerializeField] private Sprite mouseOverSprite;
+    [SerializeField] private Sprite isUsedSprite;
+
 
     public override void UseSkill()
     {
@@ -41,5 +45,14 @@ public class SimpleHeal : Skill
     public override float GetSkillCooldownTime()
     {
         return cooldownTime;
+    }
+    public override Sprite getMouseOverSprite()
+    {
+        return mouseOverSprite;
+    }
+
+    public override Sprite getIsUsedSprite()
+    {
+        return isUsedSprite;
     }
 }

@@ -12,9 +12,13 @@ public class SimpleAOEHeal : Skill
     [SerializeField] private string skillName;
     [SerializeField] private string skillDescription;
 
+
+    [SerializeField] private Sprite skillSprite;
+    [SerializeField] private Sprite mouseOverSprite;
+    [SerializeField] private Sprite isUsedSprite;
+
     private bool isSkillReady = true;
 
-    public Sprite skillSprite;
 
     public override void UseSkill()
     {
@@ -55,5 +59,15 @@ public class SimpleAOEHeal : Skill
     public override float GetSkillCooldownTime()
     {
         return cooldownTime;
+    }
+
+    public override Sprite getMouseOverSprite()
+    {
+        return mouseOverSprite;
+    }
+
+    public override Sprite getIsUsedSprite()
+    {
+        return isUsedSprite;
     }
 }
