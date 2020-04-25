@@ -52,4 +52,8 @@ public class SimpleAOEHeal : Skill
     {
         return skillDescription;
     }
+    public override float GetSkillCooldownTime()
+    {
+        return cooldownTime;
+    }
 }

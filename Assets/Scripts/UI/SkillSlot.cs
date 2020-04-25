@@ -29,12 +29,16 @@ public class SkillSlot : MonoBehaviour, IPointerClickHandler
         UpdateUI();
 
         isHaveSpell = true;
+
+        TurnOnSkill();
+
     }
 
 
     public void UpdateUI()
     {
         img.sprite = mySkill.getSprite();
+
         ////lvlText.text = mySkill.requiredLevel.ToString();
 
         //if (player.playerLevel >= mySkill.requiredLevel && player.xp >= mySkill.requiredXp)//check if player has enough xp/levels for this skill
@@ -54,7 +58,19 @@ public class SkillSlot : MonoBehaviour, IPointerClickHandler
         //}
     }
 
+    public void TurnOffSkill()
+    {
+        mySkill.SetIsSkillReady(false);
 
+        img.color = Color.grey;
+    }
+    public void TurnOnSkill()
+    {
+        mySkill.SetIsSkillReady(true);
+
+        img.color = Color.white;
+
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         //check once again if the player has enough xp/levels, and that this skill has not already been selected

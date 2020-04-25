@@ -15,21 +15,15 @@ public class AOEHealWithDelay : Skill
     [SerializeField] private string skillName;
     [SerializeField] private string skillDescription;
 
-    private bool isSkillReady = true;
-
     public Sprite skillSprite;
 
     public override void UseSkill()
     {
-        if (GameInstance.Instance.manaController.GetManaAmount() > manacost && isSkillReady)
+        if (GameInstance.Instance.manaController.GetManaAmount() > manacost && GetIsSkillReady())
         {
             StartCoroutine(HealWithDelayRoutine(healTime, healAmount));
 
             GameInstance.Instance.manaController.SpendMana(manacost);
-
-            StartCoroutine(countCooldownRoutine(cooldownTime));
-
-            isSkillReady = false;
         }
     }
 
@@ -49,14 +43,7 @@ public class AOEHealWithDelay : Skill
             t += Time.fixedDeltaTime;
         }
     }
-
-    IEnumerator countCooldownRoutine(float _cooldownTime)
-    {
-        yield return new WaitForSeconds(_cooldownTime);
-
-        isSkillReady = true;
-    }
-
+    
     public override Sprite getSprite()
     {
         return skillSprite;
@@ -68,5 +55,9 @@ public class AOEHealWithDelay : Skill
     public override string GetSkillDescription()
     {
         return skillDescription;
+    }
+    public override float GetSkillCooldownTime()
+    {
+        return cooldownTime;
     }
 }

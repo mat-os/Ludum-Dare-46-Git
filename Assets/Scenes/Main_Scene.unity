@@ -6329,6 +6329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 869483048}
+  skillPanelControll: {fileID: 1895613009}
 --- !u!114 &869483048
 MonoBehaviour:
   m_ObjectHideFlags: 0

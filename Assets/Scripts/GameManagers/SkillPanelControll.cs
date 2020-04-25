@@ -19,4 +19,15 @@ public class SkillPanelControll : MonoBehaviour
             }
         }
     }
+
+
+    public void TurnOnSkill(int skillNumber)
+    {
+        skillSlots[skillNumber].TurnOnSkill();
+    }
+
+    public void TurnOffSkill(int skillNumber)
+    {
+        skillSlots[skillNumber].TurnOffSkill();
+    }
 }
