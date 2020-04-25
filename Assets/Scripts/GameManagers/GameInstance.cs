@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameInstance : MonoBehaviour
 {
+    public Transform popupText;
+
     public PlayerInput playerInput;
     public ManaController manaController;
 

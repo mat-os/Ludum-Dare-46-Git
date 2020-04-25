@@ -66,7 +66,7 @@ public class Mana
         manaAmount += manaRegenAmount * Time.deltaTime;
         manaAmount = Mathf.Clamp(manaAmount, 0, MANA_MAX);
 
-        //Setup Text
+        //SetupDamage Text
         textToUpdate.text = manaAmount.ToString("F0") + "/" +  MANA_MAX.ToString("F0");
     }
 

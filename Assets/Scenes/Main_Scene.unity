@@ -7244,6 +7244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0c7b2d551033d4cab2e7ce73193b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupText: {fileID: 661198747901712327, guid: 6ae55e1b2c1c34f47b17a03f46224ad8,
+    type: 3}
   playerInput: {fileID: 1037254622}
   manaController: {fileID: 1534049169}
   gameStatus: {fileID: 1037254625}
@@ -7316,8 +7318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillLevel: 0
-  levelOfSkill: 0
-  healAmount: 15
+  healAmount: 1
+  healTime: 0.5
   manacost: 10
   cooldownTime: 1
   skillName: 

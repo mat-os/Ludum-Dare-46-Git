@@ -51,6 +51,8 @@ public class HPSysytem : MonoBehaviour
         }
 
         hpBar.UpdateHPBar(HPmax, HPamount);
+
+        TextPopup.CreateHealPopup(transform.position, healAmount);
     }
 
     public float GetHPAmount()

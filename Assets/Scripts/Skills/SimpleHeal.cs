@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class SimpleHeal : Skill
 {
-    [SerializeField] private float levelOfSkill;
-
     [SerializeField]private float healAmount;
+    [SerializeField] private float healTime;
     [SerializeField]private float manacost;
     [SerializeField]private float cooldownTime;
 
@@ -23,9 +22,25 @@ public class SimpleHeal : Skill
     {
         if (GameInstance.Instance.manaController.GetManaAmount() > manacost && GetIsSkillReady())
         {
-            ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
+            //ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
+
+            StartCoroutine(HealWithDelayRoutine(healTime, healAmount));
 
             GameInstance.Instance.manaController.SpendMana(manacost);
+        }
+    }
+
+    IEnumerator HealWithDelayRoutine(float HealTime, float healAmount)
+    {
+        float t = 0;
+
+        while (t < HealTime)
+        {
+            yield return new WaitForFixedUpdate();
+
+            ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
+
+            t += Time.fixedDeltaTime;
         }
     }
 

@@ -21,7 +21,6 @@ public class PlayerInventory : MonoBehaviour
     {
         AddSkill(1, skillSystem.getStartSkills(0));
         AddSkill(2, skillSystem.getStartSkills(1));
-
     }
 
     public Skill GetSkill(int skillNumber)

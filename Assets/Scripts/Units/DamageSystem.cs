@@ -49,9 +49,13 @@ public class DamageSystem : MonoBehaviour
             {
                 yield return new WaitForSeconds(attackRate);
 
-                target.TakeDamage(RandomizeDamage());
+                var dmg = RandomizeDamage();
+
+                target.TakeDamage(dmg);
 
                 PlayAnimation();
+
+                TextPopup.CreateDamagePopup(target.transform.position, dmg);
             }
 
             gameObject.GetComponent<Human>().KillEnemy(target.GetComponent<Enemy>());
@@ -69,9 +73,13 @@ public class DamageSystem : MonoBehaviour
             {
                 yield return new WaitForSeconds(attackRate);
 
-                target.TakeDamage(RandomizeDamage());
+                var dmg = RandomizeDamage();
+
+                target.TakeDamage(dmg);
 
                 enemyAnimController.AttackAnimation();
+
+                //TextPopup.CreateDamagePopup(target.transform.position, dmg);
             }
 
             yield return null;
