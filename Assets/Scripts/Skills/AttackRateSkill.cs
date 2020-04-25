@@ -6,7 +6,6 @@ public class AttackRateSkill : Skill
 {
     [SerializeField] private float AttackRateAmount;
     [SerializeField] private float timeOfEffect;
-    [SerializeField] private float manacost;
     [SerializeField] private float cooldownTime;
 
     [SerializeField] private string skillName;
@@ -18,13 +17,7 @@ public class AttackRateSkill : Skill
 
     public override void UseSkill()
     {
-        if (GameInstance.Instance.manaController.GetManaAmount() > manacost && GetIsSkillReady())
-        {
-            ChoseHealTarget.targetToHeal.GetEffectController().ChangeAttackRate(AttackRateAmount, timeOfEffect);
-
-            GameInstance.Instance.manaController.SpendMana(manacost);
-
-        }
+        ChoseHealTarget.targetToHeal.GetEffectController().ChangeAttackRate(AttackRateAmount, timeOfEffect);
     }
 
     public override Sprite getSprite()

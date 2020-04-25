@@ -6,7 +6,6 @@ public class ArmorSkil : Skill
 {
     [SerializeField] private float armorAmount;
     [SerializeField] private float timeOfArmorEffect;
-    [SerializeField] private float manacost;
     [SerializeField] private float cooldownTime;
 
     [SerializeField] private string skillName;
@@ -18,12 +17,7 @@ public class ArmorSkil : Skill
 
     public override void UseSkill()
     {
-        if (GameInstance.Instance.manaController.GetManaAmount() > manacost && GetIsSkillReady())
-        {
-            ChoseHealTarget.targetToHeal.GetEffectController().ChangeArmor(armorAmount, timeOfArmorEffect);
-
-            GameInstance.Instance.manaController.SpendMana(manacost);
-        }
+        ChoseHealTarget.targetToHeal.GetEffectController().ChangeArmor(armorAmount, timeOfArmorEffect);
     }
 
     public override Sprite getSprite()

@@ -6,6 +6,8 @@ public abstract class Skill : MonoBehaviour
 {
     public int skillLevel;
 
+    [SerializeField]private int manacost;
+
     private bool isSkillReady;
 
     public abstract void UseSkill();
@@ -30,5 +32,10 @@ public abstract class Skill : MonoBehaviour
     public bool GetIsSkillReady()
     {
         return isSkillReady;
+    }
+
+    public int GetManacost()
+    {
+        return manacost;
     }
 }
