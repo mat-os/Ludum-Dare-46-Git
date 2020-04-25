@@ -48,7 +48,7 @@ public class LevelSpawnManager : MonoBehaviour
             {
                 EndGameUI.SetActive(true);
             }
-            Debug.Log("levelEND!!!!!!!!!!!!!!!!!!!    " + levelNow);
+            Debug.Log("levelEND! " + levelNow);
 
             return true;
         }

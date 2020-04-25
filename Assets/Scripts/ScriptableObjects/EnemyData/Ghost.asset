@@ -16,6 +16,6 @@ MonoBehaviour:
   enemyName: Ghost_1
   description: 
   HP: 150
-  minAttackDamage: 12
-  maxAttackDamage: 18
+  minAttackDamage: 10
+  maxAttackDamage: 15
   attackRate: 1.5

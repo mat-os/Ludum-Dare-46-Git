@@ -6,11 +6,13 @@ public class UseSkill : MonoBehaviour
 {
     [SerializeField] private PlayerInventory inventory;
     [SerializeField] private SkillPanelControll skillPanelControll;
+    [SerializeField] private HandAnimationController handAnimationController;
 
     public void UseSkillFromInventory(int ButtonNumber)
     {
         inventory.GetSkill(ButtonNumber).UseSkill();
         CountCooldown(ButtonNumber - 1);
+        handAnimationController.PlayHandAnim(ButtonNumber);
     }
 
     void Update()
