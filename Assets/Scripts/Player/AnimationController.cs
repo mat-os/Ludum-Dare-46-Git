@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    [SerializeField] private HPSysytem hpSysytem;
     [SerializeField] private RuntimeAnimatorController normalController;
     [SerializeField] private RuntimeAnimatorController lowHPController;
 
@@ -12,16 +11,20 @@ public class AnimationController : MonoBehaviour
 
     private float startHP;
 
+    private Entity thisEntity;
+
     void Start()
     {
+        thisEntity = gameObject.GetComponent<Entity>();
+
         animator = GetComponent<Animator>();
 
-        startHP = hpSysytem.GetHPAmount();
+        startHP = thisEntity.GetHPAmount();
     }
 
     void Update()
     {
-        if (hpSysytem.GetHPAmount() > startHP / 3)
+        if (thisEntity.GetHPAmount() > startHP / 3)
         {
             animator.runtimeAnimatorController = normalController;
         }

@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class DamageSystem : MonoBehaviour
 {
-    private float damageMin;
-    private float damageMax;
-    private float attackRate;
-
     private AnimationController animationController;
     private EnemyAnimController enemyAnimController;
+
+    private Entity thisEntity;
 
     void Start()
     {
@@ -22,6 +20,8 @@ public class DamageSystem : MonoBehaviour
         {
             enemyAnimController = GetComponent<EnemyAnimController>();
         }
+
+        thisEntity = gameObject.GetComponent<Entity>();
     }
     private void PlayAnimation()
     {
@@ -33,7 +33,7 @@ public class DamageSystem : MonoBehaviour
 
     private float RandomizeDamage()
     {
-        return Random.Range(damageMin, damageMax);
+        return Random.Range(thisEntity.GetDamageMin(), thisEntity.GetDamageMax());
     }
 
     public void HitTarget(Entity target)
@@ -47,11 +47,11 @@ public class DamageSystem : MonoBehaviour
         {
             while (target.GetIsAlive() == true)
             {
-                yield return new WaitForSeconds(attackRate);
+                yield return new WaitForSeconds(thisEntity.GetAttackRate());
 
                 var dmg = RandomizeDamage();
 
-                target.TakeDamage(dmg);
+                target.GetComponent<Enemy>().TakeDamage(dmg);
 
                 PlayAnimation();
 
@@ -65,17 +65,15 @@ public class DamageSystem : MonoBehaviour
 
         else if (target is Human)
         {
-            Debug.Log("Hit Human");
-
             yield return new WaitForSeconds(Random.Range(0.1f, 0.5f));
 
             while (target.GetIsAlive() == true)
             {
-                yield return new WaitForSeconds(attackRate);
+                yield return new WaitForSeconds(thisEntity.GetAttackRate());
 
                 var dmg = RandomizeDamage();
 
-                target.TakeDamage(dmg);
+                target.GetComponent<Human>().TakeDamage(dmg);
 
                 enemyAnimController.AttackAnimation();
 
@@ -85,17 +83,4 @@ public class DamageSystem : MonoBehaviour
             yield return null;
         }
     }
-    
-    public void SetDamage(float _minDamage, float _maxDamage)
-    {
-        damageMin = _minDamage;
-        damageMax = _maxDamage;
-    }
-    public void SetAttackRate(float _attackRate)
-    {
-        attackRate = _attackRate;
-    }
-
-
-
 }

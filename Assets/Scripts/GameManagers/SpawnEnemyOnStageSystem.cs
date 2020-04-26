@@ -21,7 +21,7 @@ public class SpawnEnemyOnStageSystem : MonoBehaviour
 
             currentEnemy.name = enemyData.EnemyName;
 
-            currentEnemy.GetComponent<Enemy>().Initialisation(enemyData.MinAttackDamage, enemyData.MaxAttackDamage, enemyData.AttackRate, enemyData.HPAmount);
+            UnitInit(currentEnemy.GetComponent<Entity>(), enemyData.MinAttackDamage, enemyData.MaxAttackDamage, enemyData.AttackRate, enemyData.HPAmount);
         }
     }
 
@@ -51,6 +51,14 @@ public class SpawnEnemyOnStageSystem : MonoBehaviour
         }
 
         return positionList;
+    }
+
+    private void UnitInit(Entity entity, float minDmg, float maxDmg, float AR, float HP)
+    {
+        entity.SetDamageMin(minDmg);
+        entity.SetDamageMax(maxDmg);
+        entity.SetAttackRate(AR);
+        entity.SetHPmax(HP);
     }
 }
 

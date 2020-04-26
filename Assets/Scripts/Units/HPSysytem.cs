@@ -6,64 +6,53 @@ public class HPSysytem : MonoBehaviour
 {
     [SerializeField]private GameObject HPBarPrefab;
     [SerializeField] private Transform HPBarInstancePos;
+    
+    private HPBar hpBar;
 
-    private float HPmax;
-    private float HPamount;
-
-    HPBar hpBar;
+    private Entity thisEntity;
 
     void Start()
     {
+        thisEntity = gameObject.GetComponent<Entity>();
+
         var hpBarObj = Instantiate(HPBarPrefab, HPBarInstancePos.position, Quaternion.identity);
 
         hpBarObj.transform.parent = this.gameObject.transform;
 
         hpBar = hpBarObj.GetComponent<HPBar>();
 
-        hpBar.UpdateHPBar(HPmax, HPamount);
+        hpBar.UpdateHPBar(thisEntity.GetHPmax(), thisEntity.GetHPAmount());
         
         StartCoroutine(startRoutine());
     }
 
     public void TakeDamage(float damageAmount)
     {
-        HPamount -= damageAmount;
+        thisEntity.SetHPAmount(thisEntity.GetHPAmount() - damageAmount);
 
-        hpBar.UpdateHPBar(HPmax, HPamount);
-        
+        hpBar.UpdateHPBar(thisEntity.GetHPmax(), thisEntity.GetHPAmount());
     }
 
     public void TakeHeal(float healAmount)
     {
-        if (HPamount + healAmount >= HPmax)
+        if (thisEntity.GetHPAmount() + healAmount >= thisEntity.GetHPmax())
         {
-            HPamount = HPmax;
+            thisEntity.SetHPAmount(thisEntity.GetHPmax());
         }
         else
         {
-            HPamount += healAmount;
+            thisEntity.SetHPAmount(thisEntity.GetHPAmount() + healAmount);
         }
 
-        hpBar.UpdateHPBar(HPmax, HPamount);
+        hpBar.UpdateHPBar(thisEntity.GetHPmax(), thisEntity.GetHPAmount());
 
         TextPopup.CreateHealPopup(transform.position, healAmount);
-    }
-
-    public float GetHPAmount()
-    {
-        return HPamount;
-    }
-
-    public void SetMaxHP(float _maxHP)
-    {
-        HPmax = _maxHP;
-        HPamount = HPmax;
     }
 
     IEnumerator startRoutine()
     {
         yield return new WaitForSeconds(0.1f);
 
-        hpBar.UpdateHPBar(HPmax, HPamount);
+        hpBar.UpdateHPBar(thisEntity.GetHPmax(), thisEntity.GetHPAmount());
     }
 }

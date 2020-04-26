@@ -12,22 +12,11 @@ public class Enemy : Entity, IDamagable, IHittable
 
     private List<Human> enemies = new List<Human>();
 
-    IDamagable damageable;
-    IHittable hittable;
-
-    public override void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
-    {
-        hpSysytem = GetComponent<HPSysytem>();
-        damageSystem = GetComponent<DamageSystem>();
-
-        damageSystem.SetDamage(_minDamage, _maxDamage);
-        damageSystem.SetAttackRate(_attackRate);
-
-        hpSysytem.SetMaxHP(_HPMax);
-    }
-
     void Start()
     {
+        hpSysytem = gameObject.GetComponent<HPSysytem>();
+        damageSystem = gameObject.GetComponent<DamageSystem>();
+
         enemyAnim = gameObject.GetComponent<EnemyAnimController>();
 
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<Human>();
@@ -36,20 +25,20 @@ public class Enemy : Entity, IDamagable, IHittable
             enemies.Add(s);
         }
 
-        HitEntity();
+        DealDamage();
     }
 
-    public override void TakeDamage(float damageTaken)
+    public void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken);
 
-        if (hpSysytem.GetHPAmount() <= 0)
+        if (GetHPAmount() <= 0)
         {
             Dead();
         }
     }
 
-    public void HitEntity()
+    public void DealDamage()
     {
         damageSystem.HitTarget(enemies[Random.Range(0, enemies.Count)]);
     }

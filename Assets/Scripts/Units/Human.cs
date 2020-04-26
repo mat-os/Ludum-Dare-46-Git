@@ -6,40 +6,18 @@ using UnityEngine;
 
 public class Human : Entity, IDamagable, IHittable
 {
-    [SerializeField]private float damageMin;
-    [SerializeField]private float damageMax;
-    [SerializeField]private float attackRate;
-
-    [SerializeField] private float armorAmount;
-
-    [SerializeField]private float HPmax;
-
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
     private EffectController effectController;
 
     public Entity enemyToFight;
-
     public List<Enemy> Enemies;
-
-    IDamagable damageable;
-    IHittable hittable;
 
     private bool isFight;
 
     public EffectController GetEffectController()
     {
         return effectController;
-    }
-
-    public float GetAttackRate()
-    {
-        return attackRate;
-    }
-    public void SetAttackRate(float newRate)
-    {
-        attackRate = newRate;
-        damageSystem.SetAttackRate(newRate);
     }
 
     void Start()
@@ -75,17 +53,6 @@ public class Human : Entity, IDamagable, IHittable
             effectController = GetComponent<EffectController>();
         }
         #endregion
-
-        Initialisation(damageMin, damageMax, attackRate,HPmax);
-    }
-
-
-    public override void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
-    {
-        damageSystem.SetDamage(_minDamage, _maxDamage);
-        damageSystem.SetAttackRate(_attackRate);
-
-        hpSysytem.SetMaxHP(_HPMax);
     }
 
     void Update()
@@ -122,7 +89,7 @@ public class Human : Entity, IDamagable, IHittable
 
     public void FightTarget()
     {
-        HitEntity();
+        DealDamage();
 
         isFight = true;
     }
@@ -137,26 +104,6 @@ public class Human : Entity, IDamagable, IHittable
         }
     }
 
-    public void TakeHeal(float healAmount)
-    {
-        hpSysytem.TakeHeal(healAmount);
-    }
-
-    public override void TakeDamage(float damageTaken)
-    {
-        hpSysytem.TakeDamage(damageTaken - ((damageTaken / 100) * armorAmount));
-
-        if (hpSysytem.GetHPAmount() < 0)
-        {
-            Dead();
-        }
-    }
-
-    public void HitEntity()
-    {
-        damageSystem.HitTarget(enemyToFight);
-    }
-
     public void KillEnemy(Entity targetEnemy)
     {
         enemyToFight = null;
@@ -165,19 +112,29 @@ public class Human : Entity, IDamagable, IHittable
 
         isFight = false;
     }
+
+    public void TakeHeal(float healAmount)
+    {
+        hpSysytem.TakeHeal(healAmount);
+    }
+
+    public void TakeDamage(float damageTaken)
+    {
+        hpSysytem.TakeDamage(damageTaken - ((damageTaken / 100) * GetArmorAmount()));
+
+        if (GetHPAmount() < 0)
+        {
+            Dead();
+        }
+    }
+
+    public void DealDamage()
+    {
+        damageSystem.HitTarget(enemyToFight);
+    }
     
     public override void Dead()
     {
         GameInstance.Instance.gameplayController.GameFail();
-    }
-
-    public float GetArmorAmount()
-    {
-        return armorAmount;
-    }
-
-    public void SetArmorAmount(float _newArmor)
-    {
-        armorAmount = _newArmor;
     }
 }
