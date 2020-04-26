@@ -5,9 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New LevelData", menuName = "Level Data", order = 51)]
 public class LevelData : ScriptableObject
 {
-    [SerializeField] private int stagesOnLevel;
+    [SerializeField]
+    private int stagesOnLevel;
 
-    [SerializeField] private StageData[] possibleStages;
+    [SerializeField]
+    private StageData[] possibleStages;
+
+    [SerializeField]
+    private bool isHaveBoss;
+
+    [SerializeField]
+    private StageData bosStageData;
 
     private StageData[] shuffledStages;
 

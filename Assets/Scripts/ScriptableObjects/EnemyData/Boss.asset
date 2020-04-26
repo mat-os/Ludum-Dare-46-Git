@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyGO: {fileID: 4276247094980169548, guid: cccee6ee1f9f83a4f8f3577f28cb1529, type: 3}
   enemyName: Boss
   description: 
-  HP: 500
-  minAttackDamage: 50
-  maxAttackDamage: 100
-  attackRate: 3
+  HP: 250
+  minAttackDamage: 15
+  maxAttackDamage: 20
+  attackRate: 0.5
