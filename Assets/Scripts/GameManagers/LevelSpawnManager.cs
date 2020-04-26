@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class LevelSpawnManager : MonoBehaviour
 {
-    public LevelData level1;
-    public LevelData level2;
-    public LevelData level3;
-    public LevelData level4;
-    public LevelData level5;
+    public LevelData[] levels;
 
     public SpawnEnemyOnStageSystem spawnEnemySys;
-
+    
     private int levelNow;
-    private int stageNow = 0;
+    private int stageNow;
     private int stagesOverall;
+
+    void Start()
+    {
+        stagesOverall = levels[0].StagesOnLevel;
+    }
 
     public void SpawnEnemies()
     {
@@ -23,20 +24,33 @@ public class LevelSpawnManager : MonoBehaviour
     
     private void InitLevel(int level)
     {
-        stagesOverall = level1.StagesOnLevel.Length;
-
-        Debug.Log(stagesOverall + " Stages on level");
+        stagesOverall = levels[level].StagesOnLevel;
 
         if (stageNow < stagesOverall)
         {
-            Debug.Log(stageNow + " Stage Now");
-
-            spawnEnemySys.SpawnEnemy(level1.StagesOnLevel[stageNow].EnemyType,
-                level1.StagesOnLevel[stageNow].EnemiesToSpawn);
-
-            Debug.Log(level1.StagesOnLevel[stageNow].EnemiesToSpawn + " Enemy To Spawn Now");
+            spawnEnemySys.SpawnEnemy(levels[level].ShuffledStages[stageNow].EnemyType,
+                levels[level].ShuffledStages[stageNow].EnemiesToSpawn);
 
             stageNow++;
         }
     }
+
+    public bool isLevelEnd()
+    {
+        if (stageNow == stagesOverall)
+        {
+            levelNow++;
+            stageNow = 0;
+
+            Debug.Log("levelEND! " + levelNow);
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
+
+

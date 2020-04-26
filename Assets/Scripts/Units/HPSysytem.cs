@@ -10,7 +10,7 @@ public class HPSysytem : MonoBehaviour
     private float HPmax;
     private float HPamount;
 
-    private HPBar hpBar;
+    HPBar hpBar;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class HPSysytem : MonoBehaviour
         hpBar = hpBarObj.GetComponent<HPBar>();
 
         hpBar.UpdateHPBar(HPmax, HPamount);
-
+        
         StartCoroutine(startRoutine());
     }
 
@@ -30,6 +30,7 @@ public class HPSysytem : MonoBehaviour
         HPamount -= damageAmount;
 
         hpBar.UpdateHPBar(HPmax, HPamount);
+        
     }
 
     public void TakeHeal(float healAmount)
@@ -44,6 +45,8 @@ public class HPSysytem : MonoBehaviour
         }
 
         hpBar.UpdateHPBar(HPmax, HPamount);
+
+        TextPopup.CreateHealPopup(transform.position, healAmount);
     }
 
     public float GetHPAmount()

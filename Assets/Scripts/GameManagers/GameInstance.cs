@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class GameInstance : MonoBehaviour
 {
+    public Transform popupText;
+
     public PlayerInput playerInput;
     public ManaController manaController;
 
     public GameStatus gameStatus;
-    
+
+    public GameplayController gameplayController;
+
+    public FailUIController failUiController;
+
+    public LevelSpawnManager levelSpawnManager;
+
     #region Awake
     public static GameInstance Instance;
 

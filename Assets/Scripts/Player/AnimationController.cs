@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    private GameStatus gameStatus;
+    [SerializeField] private HPSysytem hpSysytem;
+    [SerializeField] private RuntimeAnimatorController normalController;
+    [SerializeField] private RuntimeAnimatorController lowHPController;
+
     private Animator animator;
+
+    private float startHP;
 
     void Start()
     {
-        gameStatus = GameInstance.Instance.gameStatus;
-
         animator = GetComponent<Animator>();
+
+        startHP = hpSysytem.GetHPAmount();
     }
+
+    void Update()
+    {
+        if (hpSysytem.GetHPAmount() > startHP / 3)
+        {
+            animator.runtimeAnimatorController = normalController;
+        }
+        else
+        {
+            animator.runtimeAnimatorController = lowHPController;
+        }
+    }
+
 
     public void changeAnimState(string ParamName, int Value)
     {
@@ -21,6 +39,6 @@ public class AnimationController : MonoBehaviour
 
     public void AttackAnimation()
     {
-        animator.SetTrigger("LowHP_Attack");
+        animator.SetTrigger("NormHP_Attack");
     }
 }

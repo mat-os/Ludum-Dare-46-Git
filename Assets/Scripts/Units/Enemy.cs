@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamagable, IHittable
+public class Enemy : Entity, IDamagable, IHittable
 {
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
@@ -12,12 +12,10 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
 
     private List<Human> enemies = new List<Human>();
 
-    public bool isAlive = true;
-
     IDamagable damageable;
     IHittable hittable;
 
-    public void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
+    public override void Initialisation(float _minDamage, float _maxDamage, float _attackRate, float _HPMax)
     {
         hpSysytem = GetComponent<HPSysytem>();
         damageSystem = GetComponent<DamageSystem>();
@@ -38,29 +36,29 @@ public class Enemy : MonoBehaviour, IDamagable, IHittable
             enemies.Add(s);
         }
 
-        Hit();
+        HitEntity();
     }
 
-    public void TakeDamage(float damageTaken)
+    public override void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken);
 
         if (hpSysytem.GetHPAmount() <= 0)
         {
-            EnemyDead();
+            Dead();
         }
     }
 
-    public void Hit()
+    public void HitEntity()
     {
         damageSystem.HitTarget(enemies[Random.Range(0, enemies.Count)]);
     }
 
-    private void EnemyDead()
+    public override void Dead()
     {
         enemyAnim.DeadAnim();
 
-        isAlive = false;
+        SetIsAlive(false);
 
         //Destroy(this);
         gameObject.SetActive(false);

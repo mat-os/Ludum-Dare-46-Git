@@ -17,5 +17,5 @@ MonoBehaviour:
   description: 
   HP: 75
   minAttackDamage: 5
-  maxAttackDamage: 13
-  attackRate: 0.75
+  maxAttackDamage: 10
+  attackRate: 1

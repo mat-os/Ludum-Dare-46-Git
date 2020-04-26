@@ -18,4 +18,14 @@ public class ManaController : MonoBehaviour
     {
         manaBar.SpendMana(manaToSpend);
     }
+
+    public float GetManaAmount()
+    {
+        return manaBar.GetManaAmount();
+    }
+
+    public void RestoreAllMana()
+    {
+        manaBar.RestorAllMana();
+    }
 }

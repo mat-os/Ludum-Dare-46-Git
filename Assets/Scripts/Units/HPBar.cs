@@ -14,11 +14,11 @@ public class HPBar : MonoBehaviour
 
     public void UpdateHPBar(float maxHP, float HPAmount)
     {
-       HPtext.text = HPAmount.ToString("F0") + "/" +  maxHP.ToString("F0");
-
-       HPNow = HPAmount / maxHP;
+        HPNow = HPAmount / maxHP;
 
        SetFillBar(HPNow);
+
+       HPtext.text = HPAmount.ToString("F0") + "/" + maxHP.ToString("F0");
     }
 
     void Start()
