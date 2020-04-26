@@ -4,38 +4,59 @@ using UnityEngine;
 
 public abstract class Skill : MonoBehaviour
 {
-    public int skillLevel;
+    //public int skillLevel;
 
-    [SerializeField]private int manacost;
+    [SerializeField] private int manacost;
+    [SerializeField] private float cooldownTime;
 
+    [SerializeField] private string skillName;
+    [SerializeField] private string skillDescription;
+
+    [SerializeField] private Sprite skillSprite;
+    [SerializeField] private Sprite mouseOverSprite;
+    [SerializeField] private Sprite isUsedSprite;
+    
     private bool isSkillReady;
 
     public abstract void UseSkill();
 
-    public abstract Sprite getSprite();
+    public Sprite getSprite()
+    {
+        return skillSprite;
+    }
+    public Sprite getMouseOverSprite()
+    {
+        return mouseOverSprite;
+    }
+    public Sprite getIsUsedSprite()
+    {
+        return mouseOverSprite;
+    }
 
-    public abstract Sprite getMouseOverSprite();
+    public string GetSkillName()
+    {
+        return skillName;
+    }
+    public string GetSkillDescription()
+    {
+        return skillDescription;
+    }
 
-    public abstract Sprite getIsUsedSprite();
-
-    public abstract string GetSkillName();
-
-    public abstract string GetSkillDescription();
-
-    public abstract float GetSkillCooldownTime();
+    public float GetSkillCooldownTime()
+    {
+        return cooldownTime;
+    }
+    public int GetManacost()
+    {
+        return manacost;
+    }
 
     public void SetIsSkillReady(bool _isSkillReady)
     {
         isSkillReady = _isSkillReady;
     }
-
     public bool GetIsSkillReady()
     {
         return isSkillReady;
-    }
-
-    public int GetManacost()
-    {
-        return manacost;
     }
 }

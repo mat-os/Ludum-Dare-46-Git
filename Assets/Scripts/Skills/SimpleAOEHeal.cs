@@ -7,67 +7,12 @@ public class SimpleAOEHeal : Skill
 {
     [SerializeField] private float healAmount;
     [SerializeField] private float manacost;
-    [SerializeField] private float cooldownTime;
-
-    [SerializeField] private string skillName;
-    [SerializeField] private string skillDescription;
-
-
-    [SerializeField] private Sprite skillSprite;
-    [SerializeField] private Sprite mouseOverSprite;
-    [SerializeField] private Sprite isUsedSprite;
-
-    private bool isSkillReady = true;
-
-
+    
     public override void UseSkill()
     {
-        if (GameInstance.Instance.manaController.GetManaAmount() > manacost && isSkillReady)
+        for (int i = 0; i < ChoseHealTarget.bothHuman.Length; i++)
         {
-            for (int i = 0; i < ChoseHealTarget.bothHuman.Length; i++)
-            {
-                ChoseHealTarget.bothHuman[i].TakeHeal(healAmount);
-            }
-
-            GameInstance.Instance.manaController.SpendMana(manacost);
-
-            StartCoroutine(countCooldownRoutine(cooldownTime));
-
-            isSkillReady = false;
+            ChoseHealTarget.bothHuman[i].TakeHeal(healAmount);
         }
-    }
-
-    IEnumerator countCooldownRoutine(float _cooldownTime)
-    {
-        yield return new WaitForSeconds(_cooldownTime);
-
-        isSkillReady = true;
-    }
-
-    public override Sprite getSprite()
-    {
-        return skillSprite;
-    }
-    public override string GetSkillName()
-    {
-        return skillName;
-    }
-    public override string GetSkillDescription()
-    {
-        return skillDescription;
-    }
-    public override float GetSkillCooldownTime()
-    {
-        return cooldownTime;
-    }
-
-    public override Sprite getMouseOverSprite()
-    {
-        return mouseOverSprite;
-    }
-
-    public override Sprite getIsUsedSprite()
-    {
-        return isUsedSprite;
     }
 }

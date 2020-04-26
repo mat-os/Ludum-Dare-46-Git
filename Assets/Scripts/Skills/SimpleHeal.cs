@@ -5,63 +5,10 @@ using UnityEngine.UI;
 
 public class SimpleHeal : Skill
 {
-    [SerializeField]private float healAmount;
-    [SerializeField] private float healTime;
-    [SerializeField]private float cooldownTime;
-
-    [SerializeField]private string skillName;
-    [SerializeField]private string skillDescription;
-
-    [SerializeField] private Sprite skillSprite;
-    [SerializeField] private Sprite mouseOverSprite;
-    [SerializeField] private Sprite isUsedSprite;
-
+    [SerializeField] private float healAmount;
 
     public override void UseSkill()
     {
-        //ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
-
-        StartCoroutine(HealWithDelayRoutine(healTime, healAmount));
-    }
-
-    IEnumerator HealWithDelayRoutine(float HealTime, float healAmount)
-    {
-        float t = 0;
-
-        while (t < HealTime)
-        {
-            yield return new WaitForFixedUpdate();
-
-            ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
-
-            t += Time.fixedDeltaTime;
-        }
-    }
-
-    public override Sprite getSprite()
-    {
-        return skillSprite;
-    }
-
-    public override string GetSkillName()
-    {
-        return skillName;
-    }
-    public override string GetSkillDescription()
-    {
-        return skillDescription;
-    }
-    public override float GetSkillCooldownTime()
-    {
-        return cooldownTime;
-    }
-    public override Sprite getMouseOverSprite()
-    {
-        return mouseOverSprite;
-    }
-
-    public override Sprite getIsUsedSprite()
-    {
-        return isUsedSprite;
+        ChoseHealTarget.targetToHeal.TakeHeal(healAmount);
     }
 }
