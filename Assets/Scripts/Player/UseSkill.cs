@@ -8,9 +8,16 @@ public class UseSkill : MonoBehaviour
     [SerializeField] private SkillPanelControll skillPanelControll;
     [SerializeField] private HandAnimationController handAnimationController;
 
+    private ManaController manaController;
+
+    void Start()
+    {
+        manaController = GameInstance.Instance.manaController;
+    }
+
     public void UseSkillFromInventory(int ButtonNumber)
     {
-        if (GameInstance.Instance.manaController.GetManaAmount() > inventory.GetSkill(ButtonNumber).GetManacost() && inventory.GetSkill(ButtonNumber).GetIsSkillReady())
+        if (manaController.GetManaAmount() > inventory.GetSkill(ButtonNumber).GetManacost() && inventory.GetSkill(ButtonNumber).GetIsSkillReady())
         {
             inventory.GetSkill(ButtonNumber).UseSkill();
             CountCooldown(ButtonNumber - 1);
@@ -24,30 +31,24 @@ public class UseSkill : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && inventory.GetSkill(1) != null)
         {
-            inventory.GetSkill(1).UseSkill();
-            CountCooldown(1);
+            UseSkillFromInventory(1);
         }
 
         if (Input.GetKeyDown(KeyCode.W) && inventory.GetSkill(2) != null)
         {
-            inventory.GetSkill(2).UseSkill();
-            CountCooldown(2);
-
+            UseSkillFromInventory(2);
         }
 
         if (Input.GetKeyDown(KeyCode.E) && inventory.GetSkill(3) != null)
         {
-            inventory.GetSkill(3).UseSkill();
-            CountCooldown(3);
-
+            UseSkillFromInventory(3);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && inventory.GetSkill(4) != null)
+        if (Input.GetKeyDown(KeyCode.R) && inventory.GetSkill(5) != null)
         {
-            inventory.GetSkill(4).UseSkill();
-            CountCooldown(4);
-
+            UseSkillFromInventory(4);
         }
+
     }
 
     public void CountCooldown(int _skillNumber)

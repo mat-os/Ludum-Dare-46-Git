@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7949aa1b3d5e6340becdc232f6f0c2b, type: 3}
-  m_Name: EasyBat_1_2
+  m_Name: EasyBat_4
   m_EditorClassIdentifier: 
-  enemiesToSpawn: 2
+  enemiesToSpawn: 4
   enemyType: {fileID: 11400000, guid: f9d1d1a7389723d4489af54e205ab5f3, type: 2}

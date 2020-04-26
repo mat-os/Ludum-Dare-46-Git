@@ -29,14 +29,8 @@ public class HPSysytem : MonoBehaviour
     {
         HPamount -= damageAmount;
 
-        if (hpBar == null)
-        {
-            
-        }
-        else
-        {
-            hpBar.UpdateHPBar(HPmax, HPamount);
-        }
+        hpBar.UpdateHPBar(HPmax, HPamount);
+        
     }
 
     public void TakeHeal(float healAmount)

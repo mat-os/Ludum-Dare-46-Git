@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class AttackRateSkill : Skill
 {
-    [SerializeField] private float AttackRateAmount;
+    [SerializeField] private float AttackRateMultiplier;
     [SerializeField] private float timeOfEffect;
+
+    //  human.SetAttackRate(startRate * AttackRateMultiplier);
+
 
     public override void UseSkill()
     {
-        ChoseHealTarget.targetToHeal.GetEffectController().ChangeAttackRate(AttackRateAmount, timeOfEffect);
+        ChoseHealTarget.targetToHeal.GetEffectController().ChangeAttackRate(AttackRateMultiplier, timeOfEffect);
     }
 }

@@ -908,7 +908,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.93, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1731323845}
   m_Father: {fileID: 762061486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -951,7 +952,7 @@ SpriteRenderer:
   m_SortingLayerID: -647217387
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 869372307c94de04dafa34c158be1daf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e8deea28bdaca341bc66ac9f9ec5ceb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1182,7 +1183,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 105683524}
   m_TextComponent: {fileID: 603925623}
   m_materialReferenceIndex: 1
@@ -12407,7 +12408,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 335445055}
   m_TextComponent: {fileID: 972775599}
   m_materialReferenceIndex: 1
@@ -12479,7 +12480,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 339403242}
   m_TextComponent: {fileID: 455718687}
   m_materialReferenceIndex: 1
@@ -12725,7 +12726,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &351545953
@@ -12788,7 +12789,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 351545956}
   m_TextComponent: {fileID: 981389975}
   m_materialReferenceIndex: 1
@@ -13000,7 +13001,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 395086337}
   m_TextComponent: {fileID: 480392848}
   m_materialReferenceIndex: 1
@@ -13838,7 +13839,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 559631198}
   m_TextComponent: {fileID: 132571573}
   m_materialReferenceIndex: 1
@@ -14287,7 +14288,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 597375751}
   m_TextComponent: {fileID: 134686466}
   m_materialReferenceIndex: 1
@@ -14563,7 +14564,7 @@ GameObject:
   - component: {fileID: 614402674}
   m_Layer: 0
   m_Name: Warrior_Girl
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14599,7 +14600,7 @@ MonoBehaviour:
   damageMin: 5
   damageMax: 10
   attackRate: 1
-  armorAmount: 0.5
+  armorAmount: 8
   HPmax: 150
   enemyToFight: {fileID: 0}
   Enemies: []
@@ -14661,6 +14662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd681552af3b67647bbbfcd70645294f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpSysytem: {fileID: 614402670}
+  normalController: {fileID: 22100000, guid: ab231200560c1724f8555bd380d1bda5, type: 2}
+  lowHPController: {fileID: 22100000, guid: 9a93da8ea142ccc4799292244bf920e8, type: 2}
 --- !u!114 &614402673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15469,7 +15473,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 727381354}
   m_TextComponent: {fileID: 1212132453}
   m_materialReferenceIndex: 1
@@ -15499,7 +15503,7 @@ GameObject:
   - component: {fileID: 762061493}
   m_Layer: 0
   m_Name: Mage_Girl
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15536,7 +15540,7 @@ MonoBehaviour:
   damageMin: 13
   damageMax: 20
   attackRate: 1.5
-  armorAmount: 0
+  armorAmount: 4
   HPmax: 100
   enemyToFight: {fileID: 0}
   Enemies: []
@@ -15598,6 +15602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd681552af3b67647bbbfcd70645294f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpSysytem: {fileID: 762061489}
+  normalController: {fileID: 22100000, guid: 6b3b24d2cdd5b6f4aad16c5166563ae9, type: 2}
+  lowHPController: {fileID: 22100000, guid: a5044cf454c60dd4a887e97a4ce2c29d, type: 2}
 --- !u!114 &762061492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16982,10 +16989,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1039632584}
   - component: {fileID: 1039632585}
-  - component: {fileID: 1039632583}
-  - component: {fileID: 1039632588}
-  - component: {fileID: 1039632587}
-  - component: {fileID: 1039632586}
   m_Layer: 0
   m_Name: PlayerSkills
   m_TagString: Untagged
@@ -16993,26 +16996,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1039632583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039632582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390ed483d72e1d4428dfe2cb061ca92b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manacost: 10
-  cooldownTime: 1
-  skillName: 
-  skillDescription: 
-  skillSprite: {fileID: 21300000, guid: 29ca22ec67a299b4492102c60a00b08c, type: 3}
-  mouseOverSprite: {fileID: 21300000, guid: 1ed687953799ede4b88d76b86e4506b8, type: 3}
-  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
-  healAmount: 15
 --- !u!4 &1039632584
 Transform:
   m_ObjectHideFlags: 0
@@ -17023,7 +17006,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1752644123}
+  - {fileID: 1425338475}
   m_Father: {fileID: 1037254621}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17040,86 +17025,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSkills:
-  - {fileID: 1039632583}
-  - {fileID: 1039632588}
+  - {fileID: 1846374107}
+  - {fileID: 1201193925}
   skillsLevel1:
-  - {fileID: 1039632587}
-  - {fileID: 1039632586}
+  - {fileID: 1821352372}
+  - {fileID: 1867995414}
   skillsLevel2: []
   skillsLevel3: []
   passiveSkills: []
   skillsLevel4: []
---- !u!114 &1039632586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039632582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3a8b873a22ac3349a6dddc78177ba15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manacost: 20
-  cooldownTime: 10
-  skillName: "\u0412\u043E\u043E\u0434\u0443\u0448\u0435\u0432\u043B\u0435\u043D\u0438\u0435"
-  skillDescription: "\u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C
-    \u0430\u0442\u0430\u043A\u0438 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0439
-    \u0446\u0435\u043B\u0438 \u0432 \u0434\u0432\u0430 \u0440\u0430\u0437\u0430.
-    \u0414\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442 5 \u0441\u0435\u043A\u0443\u043D\u0434."
-  skillSprite: {fileID: 21300000, guid: 98ccda01dde06f8498cef231b4e528f8, type: 3}
-  mouseOverSprite: {fileID: 21300000, guid: f980ac18dc265f34da00a81bec8ace79, type: 3}
-  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
-  AttackRateAmount: 0.1
-  timeOfEffect: 5
---- !u!114 &1039632587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039632582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd2a173c52900f4780bf9d974f2eb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manacost: 20
-  cooldownTime: 10
-  skillName: "\u0411\u043E\u0436\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-    \u0449\u0438\u0442"
-  skillDescription: "\u041D\u0430\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0435\u0442
-    \u0449\u0438\u0442 \u043D\u0430 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u0443\u044E
-    \u0446\u0435\u043B\u044C. \u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440
-    \"\u0417\u0430\u0449\u0438\u0442\u0430\" \u043D\u0430 5 \u0435\u0434. \u0414\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442
-    7 \u0441\u0435\u043A\u0443\u043D\u0434."
-  skillSprite: {fileID: 21300000, guid: a5d25f0531f21944f88135dd9a7cfadb, type: 3}
-  mouseOverSprite: {fileID: 21300000, guid: 23eb2bafa07514b49a0efbdb3e7c961e, type: 3}
-  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
-  armorAmount: 5
-  timeOfArmorEffect: 5
---- !u!114 &1039632588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039632582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd3366f71591f64799ae5c03a1ed0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manacost: 30
-  cooldownTime: 5
-  skillName: 
-  skillDescription: 
-  skillSprite: {fileID: 21300000, guid: f3f517cdb3a21324888b8c0ba9c875e3, type: 3}
-  mouseOverSprite: {fileID: 21300000, guid: e571b26f04e3c1b4e972307643dae93d, type: 3}
-  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
-  healAmount: 0.2
-  healTime: 3
 --- !u!1001 &1039810997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17360,7 +17274,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 3.05
   m_canvasRenderer: {fileID: 1047883987}
   m_TextComponent: {fileID: 1777999050}
   m_materialReferenceIndex: 1
@@ -17748,6 +17662,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 260.35217}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!1 &1201193924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201193926}
+  - component: {fileID: 1201193925}
+  m_Layer: 0
+  m_Name: AOE Heal with delay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1201193925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201193924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd3366f71591f64799ae5c03a1ed0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manacost: 30
+  cooldownTime: 5
+  skillName: 
+  skillDescription: 
+  skillSprite: {fileID: 21300000, guid: f3f517cdb3a21324888b8c0ba9c875e3, type: 3}
+  mouseOverSprite: {fileID: 21300000, guid: e571b26f04e3c1b4e972307643dae93d, type: 3}
+  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
+  healAmount: 0.2
+  healTime: 3
+--- !u!4 &1201193926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201193924}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1752644123}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1212132451
 GameObject:
   m_ObjectHideFlags: 0
@@ -19213,6 +19179,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   isHaveSpell: 0
+--- !u!1 &1425338474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425338475}
+  m_Layer: 0
+  m_Name: Level 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425338475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425338474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1821352371}
+  - {fileID: 1867995413}
+  m_Father: {fileID: 1039632584}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1448202461
 GameObject:
   m_ObjectHideFlags: 0
@@ -19764,7 +19762,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b767702838b958c408c0c9c3dd7d4564, type: 2}
   - {fileID: 11400000, guid: 771ee65591a3a1447acdc279500295b7, type: 2}
   spawnEnemySys: {fileID: 1517999375}
-  EndGameUI: {fileID: 1577733633}
 --- !u!1 &1534049166
 GameObject:
   m_ObjectHideFlags: 0
@@ -20140,7 +20137,7 @@ GameObject:
   - component: {fileID: 1598278015}
   - component: {fileID: 1598278016}
   m_Layer: 0
-  m_Name: ChillManager
+  m_Name: Altar & ChillManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20705,6 +20702,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730218598}
   m_CullTransparentMesh: 0
+--- !u!1 &1731323844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731323845}
+  - component: {fileID: 1731323846}
+  m_Layer: 0
+  m_Name: Point Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731323845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731323844}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.46, y: 1.86, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 38284757}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731323846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731323844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.9960785, g: 0.6666667, b: 0.3647059, a: 1}
+  m_Intensity: 5
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: fd37f1784de6ebda153f6cd9
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &1736712602
 GameObject:
   m_ObjectHideFlags: 0
@@ -20793,6 +20862,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   isHaveSpell: 0
+--- !u!1 &1752644122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752644123}
+  m_Layer: 0
+  m_Name: Level 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1752644123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752644122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1846374106}
+  - {fileID: 1201193926}
+  m_Father: {fileID: 1039632584}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1752716248
 GameObject:
   m_ObjectHideFlags: 0
@@ -25819,7 +25920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1771999482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26217,6 +26318,63 @@ MonoBehaviour:
   descriptionText: {fileID: 1777999050}
   literatureText: {fileID: 480392848}
   acceptButton: {fileID: 1772570714}
+--- !u!1 &1821352370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1821352371}
+  - component: {fileID: 1821352372}
+  m_Layer: 0
+  m_Name: Armor Skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1821352371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821352370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1425338475}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821352372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821352370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd2a173c52900f4780bf9d974f2eb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manacost: 20
+  cooldownTime: 10
+  skillName: "\u0411\u043E\u0436\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+    \u0449\u0438\u0442"
+  skillDescription: "\u041D\u0430\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0435\u0442
+    \u0449\u0438\u0442 \u043D\u0430 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u0443\u044E
+    \u0446\u0435\u043B\u044C. \u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440
+    \"\u0417\u0430\u0449\u0438\u0442\u0430\" \u043D\u0430 5 \u0435\u0434. \u0414\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442
+    7 \u0441\u0435\u043A\u0443\u043D\u0434."
+  skillSprite: {fileID: 21300000, guid: a5d25f0531f21944f88135dd9a7cfadb, type: 3}
+  mouseOverSprite: {fileID: 21300000, guid: 23eb2bafa07514b49a0efbdb3e7c961e, type: 3}
+  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
+  armorAmountInPercent: 50
+  timeOfArmorEffect: 5
 --- !u!1 &1828137792
 GameObject:
   m_ObjectHideFlags: 0
@@ -26253,6 +26411,57 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1846374105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1846374106}
+  - component: {fileID: 1846374107}
+  m_Layer: 0
+  m_Name: SimpleHeal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1846374106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846374105}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1752644123}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846374107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846374105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390ed483d72e1d4428dfe2cb061ca92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manacost: 10
+  cooldownTime: 1
+  skillName: 
+  skillDescription: 
+  skillSprite: {fileID: 21300000, guid: 29ca22ec67a299b4492102c60a00b08c, type: 3}
+  mouseOverSprite: {fileID: 21300000, guid: 1ed687953799ede4b88d76b86e4506b8, type: 3}
+  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
+  healAmount: 15
 --- !u!1 &1850543865
 GameObject:
   m_ObjectHideFlags: 0
@@ -26290,6 +26499,61 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 397.43225, y: 241.43347}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &1867995412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1867995413}
+  - component: {fileID: 1867995414}
+  m_Layer: 0
+  m_Name: Attack Rate Skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1867995413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867995412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1425338475}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867995414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867995412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a8b873a22ac3349a6dddc78177ba15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manacost: 20
+  cooldownTime: 10
+  skillName: "\u0412\u043E\u043E\u0434\u0443\u0448\u0435\u0432\u043B\u0435\u043D\u0438\u0435"
+  skillDescription: "\u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C
+    \u0430\u0442\u0430\u043A\u0438 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0439
+    \u0446\u0435\u043B\u0438 \u0432 \u0434\u0432\u0430 \u0440\u0430\u0437\u0430.
+    \u0414\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442 5 \u0441\u0435\u043A\u0443\u043D\u0434."
+  skillSprite: {fileID: 21300000, guid: 98ccda01dde06f8498cef231b4e528f8, type: 3}
+  mouseOverSprite: {fileID: 21300000, guid: f980ac18dc265f34da00a81bec8ace79, type: 3}
+  isUsedSprite: {fileID: 21300000, guid: bf5d194dc55bc9348862e4a9aa333863, type: 3}
+  AttackRateMultiplier: 1.5
+  timeOfEffect: 5
 --- !u!1 &1882451120
 GameObject:
   m_ObjectHideFlags: 0

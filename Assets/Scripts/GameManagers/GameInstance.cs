@@ -13,7 +13,6 @@ public class GameInstance : MonoBehaviour
 
     public GameplayController gameplayController;
 
-
     public FailUIController failUiController;
 
     public LevelSpawnManager levelSpawnManager;

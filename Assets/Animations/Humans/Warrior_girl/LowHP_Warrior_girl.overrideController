@@ -6,12 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mage_girl
+  m_Name: LowHP_Warrior_girl
   m_Controller: {fileID: 9100000, guid: b8532a6eff820b847b4e129b242abdca, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 9d954ce228d87324e875377bb75b8058, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 9190dfb8b0621c041be14f47cf25675b, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d0ac9bb9c25395d40b4d12cbd2e3fc3b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 7efdbba7466a90542a9d2de8dc67fbc1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9b6cf958b2984d24fa7297faced739eb, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: edb5c28aa1ad419469b38cfe3d5f6ef1, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: c3c6fe44eb6a0ca4391d8250de23a539, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ee9f015e272c0e045b9280a05d169b25, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9d954ce228d87324e875377bb75b8058, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b6c5b565cddd506428330476afce3e5b, type: 2}

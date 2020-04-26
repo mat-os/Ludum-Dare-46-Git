@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShildHPBarManager : MonoBehaviour
+public class HPBarManager : MonoBehaviour
 {
     public GameObject shield;
 

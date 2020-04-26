@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ArmorSkil : Skill
 {
-    [SerializeField] private float armorAmount;
+    [SerializeField] private float armorAmountInPercent;
     [SerializeField] private float timeOfArmorEffect;
+
+    //  human.SetArmorAmount(startArmor + armor);
 
     public override void UseSkill()
     {
-        ChoseHealTarget.targetToHeal.GetEffectController().ChangeArmor(armorAmount, timeOfArmorEffect);
+        ChoseHealTarget.targetToHeal.GetEffectController().ChangeArmor(armorAmountInPercent, timeOfArmorEffect);
     }
 }

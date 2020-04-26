@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7949aa1b3d5e6340becdc232f6f0c2b, type: 3}
   m_Name: BossStage
   m_EditorClassIdentifier: 
-  enemiesToSpawn: 0
+  enemiesToSpawn: 1
   enemyType: {fileID: 11400000, guid: 653c5866edda600418d39dfdaf3faea7, type: 2}

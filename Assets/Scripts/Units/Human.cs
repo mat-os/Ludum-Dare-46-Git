@@ -144,7 +144,7 @@ public class Human : Entity, IDamagable, IHittable
 
     public override void TakeDamage(float damageTaken)
     {
-        hpSysytem.TakeDamage(damageTaken - armorAmount);
+        hpSysytem.TakeDamage(damageTaken - ((damageTaken / 100) * armorAmount));
 
         if (hpSysytem.GetHPAmount() < 0)
         {
