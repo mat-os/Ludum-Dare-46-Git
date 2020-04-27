@@ -8,14 +8,19 @@ public abstract class Skill : MonoBehaviour
 
     [SerializeField] private int manacost;
     [SerializeField] private float cooldownTime;
+    [SerializeField] private bool isSkillPassive;
 
     [SerializeField] private string skillName;
+    [TextArea]
     [SerializeField] private string skillDescription;
 
     [SerializeField] private Sprite skillSprite;
     [SerializeField] private Sprite mouseOverSprite;
     [SerializeField] private Sprite isUsedSprite;
-    
+
+    [TextArea]
+    [SerializeField] private string skillLiteratureDescription;
+
     private bool isSkillReady;
 
     public abstract void UseSkill();
@@ -51,6 +56,11 @@ public abstract class Skill : MonoBehaviour
         return manacost;
     }
 
+    public bool GetIsSkillPassive()
+    {
+        return isSkillPassive;
+    }
+
     public void SetIsSkillReady(bool _isSkillReady)
     {
         isSkillReady = _isSkillReady;
@@ -58,5 +68,10 @@ public abstract class Skill : MonoBehaviour
     public bool GetIsSkillReady()
     {
         return isSkillReady;
+    }
+
+    public string GetSkillLiteratureDescription()
+    {
+        return skillLiteratureDescription;
     }
 }

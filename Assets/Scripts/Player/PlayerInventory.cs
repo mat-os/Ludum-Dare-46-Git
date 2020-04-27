@@ -102,5 +102,10 @@ public class PlayerInventory : MonoBehaviour
 
                 break;
         }
+
+        if (skill.GetIsSkillPassive() == true)
+        {
+            skill.UseSkill();
+        }
     }
 }

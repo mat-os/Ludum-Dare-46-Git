@@ -11,7 +11,7 @@ public class ManaBar : MonoBehaviour
     private Mana mana;
     private Image barImage;
 
-    public void InitManabar(int maxMana, float _manaRegenAmount)
+    public void InitManabar(float maxMana, float _manaRegenAmount)
     {
         barImage = transform.Find("Bar").GetComponent<Image>();
 
@@ -41,17 +41,27 @@ public class ManaBar : MonoBehaviour
             barImage.fillAmount = mana.GetManaNormalized();
         }
     }
+
+    public void ChangeManaRegAmount(float newManaReg)
+    {
+        mana.manaRegenAmount = newManaReg;
+    }
+
+    public void ChangeMaxMana(float newMana)
+    {
+        mana.MANA_MAX = newMana;
+    }
 }
 
 public class Mana
 {
-    public int MANA_MAX = 100;
+    public float MANA_MAX = 100;
 
     private float manaAmount;
-    private float manaRegenAmount;
+    public float manaRegenAmount;
 
     //Set Variables
-    public Mana(int maxMana, float _manaRegenAmount)
+    public Mana(float maxMana, float _manaRegenAmount)
     {
         MANA_MAX = maxMana;
 

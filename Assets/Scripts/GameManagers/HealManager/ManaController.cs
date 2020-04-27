@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ManaController : MonoBehaviour
 {
-    [SerializeField]private int maxMana;
+    [SerializeField]private float maxMana;
     [SerializeField]private float manaRegenAmount;
 
     [SerializeField] private ManaBar manaBar;
@@ -18,10 +18,31 @@ public class ManaController : MonoBehaviour
     {
         manaBar.SpendMana(manaToSpend);
     }
-
     public float GetManaAmount()
     {
         return manaBar.GetManaAmount();
+    }
+
+    public float GetMaxMana()
+    {
+        return maxMana;
+    }
+    public void SetMaxMana(float newAmount)
+    {
+        maxMana = newAmount;
+
+        manaBar.ChangeMaxMana(maxMana);
+    }
+
+    public float GetManaRegAmount()
+    {
+        return manaRegenAmount;
+    }
+    public void SetManaRegAmount(float newAmount)
+    {
+        manaRegenAmount = newAmount;
+
+        manaBar.ChangeManaRegAmount(manaRegenAmount);
     }
 
     public void RestoreAllMana()

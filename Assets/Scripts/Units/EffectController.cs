@@ -15,7 +15,7 @@ public class EffectController : MonoBehaviour
         hpBarManager = GetComponent<HPBarManager>();
     }
 
-    //Просто устанавливаем новое значение вместо прежденго, потом оно меняется на прежнее
+    //Просто устанавливаем новое значение, потом оно меняется на прежнее
     public void ChangeArmor(float armor, float timeOfActive)
     {
         StartCoroutine(changeArmorRoutine(armor, timeOfActive));
@@ -47,7 +47,7 @@ public class EffectController : MonoBehaviour
     {
         var startRate = human.GetAttackRate();
 
-        human.SetAttackRate(startRate * attackRate);
+        human.SetAttackRate(startRate - (startRate / attackRate));
 
         //gameObject.GetComponent<HPBarManager>().ActivateShield();
 

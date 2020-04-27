@@ -7,7 +7,7 @@ public class AttackRateSkill : Skill
     [SerializeField] private float AttackRateMultiplier;
     [SerializeField] private float timeOfEffect;
 
-    //  human.SetAttackRate(startRate * AttackRateMultiplier);
+    //          human.SetAttackRate(startRate - (startRate / attackRate));
 
 
     public override void UseSkill()

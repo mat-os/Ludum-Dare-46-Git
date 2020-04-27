@@ -38,6 +38,7 @@ public class DamageSystem : MonoBehaviour
 
     public void HitTarget(Entity target)
     {
+        StopAllCoroutines();
         StartCoroutine(AttackEntity(target));
     }
 

@@ -4,11 +4,12 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using UnityEngine;
 
-public class Human : Entity, IDamagable, IHittable
+public class Human : Entity
 {
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
     private EffectController effectController;
+    private AgrSystem agrSystem;
 
     public Entity enemyToFight;
     public List<Enemy> Enemies;
@@ -53,6 +54,11 @@ public class Human : Entity, IDamagable, IHittable
             effectController = GetComponent<EffectController>();
         }
         #endregion
+
+        if (gameObject.GetComponent<AgrSystem>() != null)
+        {
+            agrSystem = GetComponent<AgrSystem>();
+        }
     }
 
     void Update()
@@ -66,15 +72,13 @@ public class Human : Entity, IDamagable, IHittable
 
             else if(enemyToFight != null && isFight == false)
             {
-                FightTarget();
+                DealDamage();
             }
         }
     }
 
     public void FindTarget()
     {
-        Debug.Log("FIND");
-
         Enemies = new List<Enemy>(FindObjectsOfType<Enemy>());
 
         if (Enemies.Count() == 0)
@@ -85,13 +89,6 @@ public class Human : Entity, IDamagable, IHittable
         {
             enemyToFight = Enemies[0];
         }
-    }
-
-    public void FightTarget()
-    {
-        DealDamage();
-
-        isFight = true;
     }
 
     public void EndFight()
@@ -131,6 +128,13 @@ public class Human : Entity, IDamagable, IHittable
     public void DealDamage()
     {
         damageSystem.HitTarget(enemyToFight);
+
+        if (agrSystem != null)
+        {
+            agrSystem.UseAgr();
+        }
+
+        isFight = true;
     }
     
     public override void Dead()

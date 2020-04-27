@@ -17,13 +17,16 @@ public class UseSkill : MonoBehaviour
 
     public void UseSkillFromInventory(int ButtonNumber)
     {
-        if (manaController.GetManaAmount() > inventory.GetSkill(ButtonNumber).GetManacost() && inventory.GetSkill(ButtonNumber).GetIsSkillReady())
+        if (inventory.GetSkill(ButtonNumber).GetIsSkillPassive() != true)
         {
-            inventory.GetSkill(ButtonNumber).UseSkill();
-            CountCooldown(ButtonNumber - 1);
-            handAnimationController.PlayHandAnim(ButtonNumber);
+            if (manaController.GetManaAmount() > inventory.GetSkill(ButtonNumber).GetManacost() && inventory.GetSkill(ButtonNumber).GetIsSkillReady())
+            {
+                inventory.GetSkill(ButtonNumber).UseSkill();
+                CountCooldown(ButtonNumber - 1);
+                handAnimationController.PlayHandAnim(ButtonNumber);
 
-            GameInstance.Instance.manaController.SpendMana(inventory.GetSkill(ButtonNumber).GetManacost());
+                GameInstance.Instance.manaController.SpendMana(inventory.GetSkill(ButtonNumber).GetManacost());
+            }
         }
     }
 

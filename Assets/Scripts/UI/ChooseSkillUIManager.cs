@@ -38,13 +38,8 @@ public class ChooseSkillUIManager : MonoBehaviour
         skillLeft = skillSystem.GetRandomSkillOfLevel(1);
         skillRight = skillSystem.GetRandomSkillOfLevel(1);
 
-        uiSkillChooseLeft.UISkillChooseInstance(skillLeft.getSprite(),
-                skillLeft.GetSkillName(),
-                skillLeft.GetSkillDescription());
+        uiSkillChooseLeft.UISkillChooseInstance(skillLeft);
 
-
-        uiSkillChooseRight.UISkillChooseInstance(skillRight.getSprite(),
-            skillRight.GetSkillName(),
-            skillRight.GetSkillDescription());
+        uiSkillChooseRight.UISkillChooseInstance(skillRight);
     }
 }

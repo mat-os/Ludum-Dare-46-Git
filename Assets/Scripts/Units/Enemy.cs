@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Enemy : Entity, IDamagable, IHittable
+public class Enemy : Entity
 {
     private HPSysytem hpSysytem;
     private DamageSystem damageSystem;
 
     private EnemyAnimController enemyAnim;
 
-    private List<Human> enemies = new List<Human>();
+    public List<Human> enemies = new List<Human>();
+
+    private bool isAgred;
 
     void Start()
     {
@@ -19,13 +21,19 @@ public class Enemy : Entity, IDamagable, IHittable
 
         enemyAnim = gameObject.GetComponent<EnemyAnimController>();
 
-        var ss = FindObjectsOfType<MonoBehaviour>().OfType<Human>();
+        FindHumans();
+    }
+
+    private void FindHumans()
+    {
+        var ss = FindObjectsOfType<Human>();
+
         foreach (Human s in ss)
         {
             enemies.Add(s);
         }
 
-        DealDamage();
+        DealDamage(enemies[Random.Range(0, enemies.Count)]);
     }
 
     public void TakeDamage(float damageTaken)
@@ -38,9 +46,15 @@ public class Enemy : Entity, IDamagable, IHittable
         }
     }
 
-    public void DealDamage()
+    public void DealDamage(Human humanToAttack)
     {
-        damageSystem.HitTarget(enemies[Random.Range(0, enemies.Count)]);
+        damageSystem.HitTarget(humanToAttack);
+    }
+
+    //получили агр от воина
+    public void Agred(Human agrHuman, float agrTime)
+    {
+        StartCoroutine(AgrRoutine(agrHuman, agrTime));
     }
 
     public override void Dead()
@@ -52,5 +66,16 @@ public class Enemy : Entity, IDamagable, IHittable
         //Destroy(this);
         gameObject.SetActive(false);
         //Destroy(gameObject);
+    }
+
+    //получили агр от воина
+    IEnumerator AgrRoutine(Human agrHuman, float agrTime)
+    {
+        damageSystem.HitTarget(enemies.Find(human => agrHuman));
+
+        yield return new WaitForSeconds(agrTime);
+
+        DealDamage(enemies[Random.Range(0, enemies.Count)]);
+
     }
 }

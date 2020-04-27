@@ -17,7 +17,8 @@ MonoBehaviour:
   materialHashCode: 148124520
   m_Version: 1.1.0
   m_SourceFontFileGUID: 370d89d5ab3907d4aa34e7fbac0a0ce8
-  m_SourceFontFile_EditorRef: {fileID: 0}
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 370d89d5ab3907d4aa34e7fbac0a0ce8,
+    type: 3}
   m_SourceFontFile: {fileID: 0}
   m_AtlasPopulationMode: 0
   m_FaceInfo:
@@ -2303,8 +2304,8 @@ MonoBehaviour:
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
-    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000}
+    italicTypeface: {fileID: 11400000}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}

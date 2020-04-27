@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7043c5a1267a65b43a3cceba8a7c5b8e, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  stagesOnLevel: 3
+  stagesOnLevel: 4
   possibleStages:
   - {fileID: 11400000, guid: f608be07225aa484ea7281b27da7d860, type: 2}
   - {fileID: 11400000, guid: 87825bc58afa4db4885b10281dee7a9c, type: 2}
