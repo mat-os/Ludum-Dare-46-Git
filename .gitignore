@@ -56,7 +56,7 @@ sysinfo.txt
 *.unitypackage
 
 # Crashlytics generated file
-*.crashlytics-build.properties
+crashlytics-build.properties
 
-*.fmod_editor.log
-*.fmod_editor.log
+fmod_editor.log
+fmod_editor.log
