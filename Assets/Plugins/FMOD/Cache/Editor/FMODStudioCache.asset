@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9183943907048320443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-9068778611413369221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,7 +69,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8763357476444977660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +85,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/Master.bank
   SubDir: 
   lastModified: 637228183605940407
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-8425597311559620913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236311849663432
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -89,6 +124,41 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8025323131563033102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-7762992002785242082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236317050411408
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7639154218744899766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Fmod Banks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637236279801688366
+  lastModified: 637236317049351645
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -342,7 +412,7 @@ MonoBehaviour:
   lastModified: 637236279802978045
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4930637199075833886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +482,7 @@ MonoBehaviour:
   Path: event:/Menu_Knob
   guid: 54cd5a94d75cad469917a7ed9bef678b
   Banks:
-  - {fileID: -5028919659682844312}
+  - {fileID: -7762992002785242082}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -420,6 +490,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1625
+--- !u!114 &-3630521231425981827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236304401738417
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-3505400664499679621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +562,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2957711312898144505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236307225164761
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-2753192884734840019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +598,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-2591944232909618930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-2475801003267348514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +630,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/SFX.bank
   SubDir: 
   lastModified: 637236240084064868
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-2391740914744795954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236308233604921
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -545,7 +686,25 @@ MonoBehaviour:
   lastModified: 637236279801628359
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &-2132213039966586977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236304402218323
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-1490977794212229315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +738,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/MyMusic.bank
   SubDir: 
   lastModified: 637236276011039826
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-1402767480140357479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236310468685116
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -672,6 +849,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-447319658565166009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-290023482466474469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,9 +898,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6935953685779066171}
-  - {fileID: -2299993154156121774}
-  - {fileID: 8253350375088637393}
-  - {fileID: -5028919659682844312}
+  - {fileID: 7753832158294594236}
+  - {fileID: 4569484866881358074}
+  - {fileID: -7762992002785242082}
   EditorEvents:
   - {fileID: 705935100058051897}
   - {fileID: 426043817627268806}
@@ -714,10 +908,10 @@ MonoBehaviour:
   - {fileID: 6374669725340861679}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -2299993154156121774}
+  - {fileID: 7753832158294594236}
   StringsBanks:
   - {fileID: -6935953685779066171}
-  stringsBankWriteTime: 637236279801688366
+  stringsBankWriteTime: 637236317049351645
   cacheVersion: 3
 --- !u!114 &419141283191939925
 MonoBehaviour:
@@ -752,12 +946,12 @@ MonoBehaviour:
   Path: event:/Menu_Music
   guid: a5fccd21e64f49428ee5a2468d7ff300
   Banks:
-  - {fileID: 8253350375088637393}
+  - {fileID: 4569484866881358074}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -8920647769206824063}
+  - {fileID: 6544850756743246289}
   MinDistance: 0
   MaxDistance: 0
   Length: 130909
@@ -784,6 +978,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 42000
+--- !u!114 &840164209952305481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236311849063571
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &948501709673731688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +1086,78 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &1628351257191384319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236308234246720
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2019986680928855526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236311848373712
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2079954907087765430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236315853595583
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2296797732419392372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236310467355438
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &2635871800996233906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,6 +1211,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3194418576268400408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236304400198788
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3201531828456751104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,6 +1244,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/SFX.bank
   SubDir: 
   lastModified: 637236270615440897
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3488333411733275867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236307226501494
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -962,6 +1282,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &3599765833012202057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236314616409764
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3705335784757817389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,6 +1315,77 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/MyMusic.bank
   SubDir: 
   lastModified: 637228183606010411
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3896435825216795536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &4184469160818102018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236307225881122
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &4336092037844518759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236310468135246
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &4569484866881358074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236317049931513
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1049,6 +1458,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/Master.bank
   SubDir: 
   lastModified: 637228181553195061
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &5969312562196725406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236315854465384
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -1157,7 +1584,7 @@ MonoBehaviour:
   Path: event:/Menu_Knob_Navodka
   guid: 8bb5cc3fb8cd674f95b1f2e0c64da74d
   Banks:
-  - {fileID: -5028919659682844312}
+  - {fileID: -7762992002785242082}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1165,6 +1592,41 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 272
+--- !u!114 &6404694116074721905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236315855130390
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &6544850756743246289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &6926693583655757409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,6 +1642,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/MyMusic.bank
   SubDir: 
   lastModified: 637228183606010411
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &7065356017290789686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236308234744664
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -1201,6 +1681,41 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7753832158294594236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236317049301649
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8017972712945497487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &8173473430987964481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,6 +1731,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/MyMusic.bank
   SubDir: 
   lastModified: 637236277576991063
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &8241610468253541045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236314617129574
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -1236,7 +1769,7 @@ MonoBehaviour:
   lastModified: 637236279802308214
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &8263106161641055045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,6 +1806,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &8424153791005732781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &8427907531978153581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,6 +1856,24 @@ MonoBehaviour:
   Path: Fmod Banks/Desktop/MyMusic.bank
   SubDir: 
   lastModified: 637236271392370413
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &8941321043194944472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637236314615559929
   LoadResult: 0
   FileSizes: []
   Exists: 0

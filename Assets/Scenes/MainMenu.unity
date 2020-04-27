@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   - Target: {fileID: 9311527}
     Params:
     - Name: Inside
-      Value: 1
+      Value: 0.002
   TriggerEvent: 11
 --- !u!1 &311264906 stripped
 GameObject:
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   - Target: {fileID: 9311527}
     Params:
     - Name: Inside
-      Value: 1
+      Value: 0.002
   TriggerEvent: 11
 --- !u!114 &311264909
 MonoBehaviour:
@@ -2600,7 +2600,7 @@ MonoBehaviour:
   - Target: {fileID: 9311527}
     Params:
     - Name: Inside
-      Value: 0.93
+      Value: 0.001
   TriggerEvent: 11
 --- !u!1 &616201242
 GameObject:
@@ -4235,7 +4235,7 @@ MonoBehaviour:
   - Target: {fileID: 9311527}
     Params:
     - Name: Inside
-      Value: 1
+      Value: 0.002
   TriggerEvent: 11
 --- !u!1 &1160443241
 GameObject:
