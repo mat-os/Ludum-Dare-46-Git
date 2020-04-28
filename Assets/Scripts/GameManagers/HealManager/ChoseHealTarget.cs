@@ -37,20 +37,20 @@ public class ChoseHealTarget : MonoBehaviour
     {
         targetToHeal.GetComponentInChildren<SpriteRenderer>().color = inactiveColor;
 
-        targetToHeal.GetComponent<HPSysytem>().GetHPBar().ChangeSpritesActive(false, inactiveColor);
+        //targetToHeal.GetComponent<HPSysytem>().GetHPBar().ChangeSpritesActive(false, inactiveColor);
 
         targetToHeal = targetHuman;
 
         targetToHeal.GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
-        targetToHeal.GetComponent<HPSysytem>().GetHPBar().ChangeSpritesActive(true, Color.white);
+        //targetToHeal.GetComponent<HPSysytem>().GetHPBar().ChangeSpritesActive(true, Color.white);
     }
 
     void Start()
     {
         rightHuman.GetComponentInChildren<SpriteRenderer>().color = inactiveColor;
 
-        rightHuman.GetComponent<HPSysytem>().GetHPBar().ChangeSpritesActive(false, inactiveColor);
+        //rightHuman.GetComponent<HPSysytem>().GetHPBar().ChangeSpritesActive(false, inactiveColor);
 
         targetToHeal = leftHuman;
 

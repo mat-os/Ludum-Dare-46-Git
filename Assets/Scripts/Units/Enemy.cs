@@ -36,7 +36,7 @@ public class Enemy : Entity
         DealDamage(enemies[Random.Range(0, enemies.Count)]);
     }
 
-    public void TakeDamage(float damageTaken)
+    public override void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken);
 

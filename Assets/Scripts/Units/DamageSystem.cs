@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class DamageSystem : MonoBehaviour
 {
+    [SerializeField]
+    private StatusEffectData specialEffect;
+
     private AnimationController animationController;
     private EnemyAnimController enemyAnimController;
 
     private Entity thisEntity;
-
+    
     void Start()
     {
         if (gameObject.GetComponent<AnimationController>() != null)
@@ -56,6 +59,8 @@ public class DamageSystem : MonoBehaviour
 
                 PlayAnimation();
 
+                UseSpecialAbility(target);
+
                 TextPopup.CreateDamagePopup(target.transform.position, dmg);
             }
 
@@ -74,6 +79,8 @@ public class DamageSystem : MonoBehaviour
 
                 var dmg = RandomizeDamage();
 
+                UseSpecialAbility(target);
+
                 target.GetComponent<Human>().TakeDamage(dmg);
 
                 enemyAnimController.AttackAnimation();
@@ -82,6 +89,17 @@ public class DamageSystem : MonoBehaviour
             }
 
             yield return null;
+        }
+    }
+
+    void UseSpecialAbility(Entity target)
+    {
+        if (specialEffect != null)
+        {
+            if (specialEffect.ChanceOfEffect > Random.Range(0, 100))
+            {
+                target.GetComponent<StatusEffectsManager>().AddEffect(specialEffect, specialEffect.TimeOfEffect);
+            }
         }
     }
 }

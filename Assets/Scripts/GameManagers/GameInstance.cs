@@ -17,6 +17,8 @@ public class GameInstance : MonoBehaviour
 
     public LevelSpawnManager levelSpawnManager;
 
+    public ParticleSystemController particleSystemController;
+
     #region Awake
     public static GameInstance Instance;
 

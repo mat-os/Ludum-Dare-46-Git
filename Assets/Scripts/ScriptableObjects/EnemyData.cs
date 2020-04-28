@@ -19,6 +19,9 @@ public class EnemyData : ScriptableObject
     private float maxAttackDamage;
     [SerializeField]
     private float attackRate;
+    [SerializeField]
+    private StatusEffectData effectData;
+
 
     public GameObject EnemyGO
     {

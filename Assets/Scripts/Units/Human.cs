@@ -115,7 +115,7 @@ public class Human : Entity
         hpSysytem.TakeHeal(healAmount);
     }
 
-    public void TakeDamage(float damageTaken)
+    public override void TakeDamage(float damageTaken)
     {
         hpSysytem.TakeDamage(damageTaken - ((damageTaken / 100) * GetArmorAmount()));
 

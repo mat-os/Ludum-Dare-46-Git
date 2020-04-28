@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class EffectController : MonoBehaviour
 {
-    private Human human;
+    public GameObject shield;
 
-    private HPBarManager hpBarManager;
+    private Human human;
 
     void Start()
     {
         human = GetComponent<Human>();
-
-        hpBarManager = GetComponent<HPBarManager>();
     }
 
     //Просто устанавливаем новое значение, потом оно меняется на прежнее
@@ -27,11 +25,11 @@ public class EffectController : MonoBehaviour
 
         human.SetArmorAmount(startArmor + armor);
 
-        hpBarManager.ActivateShield();
+        shield.SetActive(true);
 
         yield return new WaitForSeconds(timeOfActive);
 
-        hpBarManager.DectivateShield();
+        shield.SetActive(false);
 
         human.SetArmorAmount(startArmor);
 

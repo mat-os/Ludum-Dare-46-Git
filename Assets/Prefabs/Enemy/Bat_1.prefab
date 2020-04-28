@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1608293168209762486}
   - component: {fileID: 7492003862234671154}
   - component: {fileID: 1003424496839088499}
+  - component: {fileID: -6897726609994774559}
   m_Layer: 0
   m_Name: Bat_1
   m_TagString: Untagged
@@ -79,6 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0da9cf5c10f4f742b437a9733a1007d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPmax: 0
+  damageMin: 0
+  damageMax: 0
+  attackRate: 0
+  armorAmount: 0
+  enemies: []
 --- !u!114 &7057755123862971150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d2448b005c74e4db8ca8d008f79a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  specialEffect: {fileID: 0}
 --- !u!114 &-4447410198508546579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +197,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6897726609994774559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4276247094980169548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb5595057d10994db35ac6b771a9460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

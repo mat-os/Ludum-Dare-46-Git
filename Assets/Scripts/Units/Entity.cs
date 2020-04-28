@@ -20,7 +20,10 @@ public abstract class Entity : MonoBehaviour
 
     private bool isAlive = true;
     public abstract void Dead();
-    
+
+    public abstract void TakeDamage(float damageTaken);
+
+    #region Get & Set
     public float GetHPmax()
     {
         return HPmax;
@@ -84,4 +87,7 @@ public abstract class Entity : MonoBehaviour
     {
         isAlive = newBool;
     }
+    
+
+    #endregion
 }
