@@ -55,4 +55,9 @@ public class HPSysytem : MonoBehaviour
 
         hpBar.UpdateHPBar(thisEntity.GetHPmax(), thisEntity.GetHPAmount());
     }
+
+    public HPBar GetHPBar()
+    {
+        return hpBar;
+    }
 }

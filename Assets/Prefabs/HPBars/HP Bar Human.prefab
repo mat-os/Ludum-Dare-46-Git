@@ -278,7 +278,7 @@ MonoBehaviour:
   m_text: 100 / 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -431,6 +431,10 @@ MonoBehaviour:
   HPtext: {fileID: 2030528975689807155}
   HPSliderImage: {fileID: 2030528974189720451}
   FullHPSliderImage: {fileID: 2030528975355772226}
+  sprites:
+  - {fileID: 2030528974189720448}
+  - {fileID: 2030528975355772227}
+  - {fileID: 5114766743644422779}
 --- !u!1 &2465568208509705656
 GameObject:
   m_ObjectHideFlags: 0

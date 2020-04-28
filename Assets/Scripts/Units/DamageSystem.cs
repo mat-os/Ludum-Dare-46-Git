@@ -66,7 +66,7 @@ public class DamageSystem : MonoBehaviour
 
         else if (target is Human)
         {
-            yield return new WaitForSeconds(Random.Range(0.1f, 0.5f));
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
 
             while (target.GetIsAlive() == true)
             {

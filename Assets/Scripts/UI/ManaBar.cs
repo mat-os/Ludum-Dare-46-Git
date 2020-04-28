@@ -9,6 +9,7 @@ public class ManaBar : MonoBehaviour
     [SerializeField]private TMP_Text manaText;
 
     private Mana mana;
+
     private Image barImage;
 
     public void InitManabar(float maxMana, float _manaRegenAmount)
@@ -17,7 +18,7 @@ public class ManaBar : MonoBehaviour
 
         mana = new Mana(maxMana, _manaRegenAmount);
     }
-
+    
     public void SpendMana(float spendMana)
     {
         mana.SpendMana(spendMana);
@@ -30,7 +31,7 @@ public class ManaBar : MonoBehaviour
 
     public void RestorAllMana()
     {
-        mana.RestoreMana(1000);
+        mana.RestoreMana(0);
     }
 
     private void FixedUpdate()
@@ -53,6 +54,7 @@ public class ManaBar : MonoBehaviour
     }
 }
 
+
 public class Mana
 {
     public float MANA_MAX = 100;
@@ -65,7 +67,7 @@ public class Mana
     {
         MANA_MAX = maxMana;
 
-        manaAmount = MANA_MAX - 3;
+        manaAmount = 0;
 
         manaRegenAmount = _manaRegenAmount;
     }
@@ -73,32 +75,23 @@ public class Mana
     //Add ManaRegen and Clamp it
     public void Update(TMP_Text textToUpdate)
     {
-        manaAmount += manaRegenAmount * Time.deltaTime;
+        manaAmount -= manaRegenAmount * Time.deltaTime;
+
         manaAmount = Mathf.Clamp(manaAmount, 0, MANA_MAX);
 
-        //SetupDamage Text
-        textToUpdate.text = manaAmount.ToString("F0") + "/" +  MANA_MAX.ToString("F0");
+        //Setup Text
+        textToUpdate.text = manaAmount.ToString("F0") + "/" + MANA_MAX.ToString("F0");
     }
 
     //Method to spend mana
     public void SpendMana(float amount)
     {
-        if(manaAmount >= amount)
-        {
-            manaAmount -= amount;
-        }
+        manaAmount += amount;
     }
     //Method to restore mana
     public void RestoreMana(int amount)
     {
-        if (manaAmount + amount < MANA_MAX)
-        {
-            manaAmount += amount;
-        }
-        else
-        {
-            manaAmount = MANA_MAX;
-        }
+        manaAmount = amount;
     }
 
     public float GetManaNormalized()

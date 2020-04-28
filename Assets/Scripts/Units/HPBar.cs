@@ -10,7 +10,9 @@ public class HPBar : MonoBehaviour
     [SerializeField] private Transform HPSliderImage;
     [SerializeField] private Transform FullHPSliderImage;
 
-    private float HPNow;
+    [SerializeField] private SpriteRenderer[] sprites;
+
+   private float HPNow;
 
     public void UpdateHPBar(float maxHP, float HPAmount)
     {
@@ -38,5 +40,24 @@ public class HPBar : MonoBehaviour
         var newScale = this.HPSliderImage.localScale;
         newScale.x = this.FullHPSliderImage.localScale.x * fillAmount;
         this.HPSliderImage.localScale = newScale;
+    }
+
+    public void ChangeSpritesActive(bool isActive, Color inactiveColor)
+    {
+        switch (isActive)
+        {
+            case false:
+                for (int i = 0; i < sprites.Length; i++)
+                {
+                    sprites[i].color = inactiveColor;
+                }
+                break;
+            case true:
+                for (int i = 0; i < sprites.Length; i++)
+                {
+                    sprites[i].color = Color.white;
+                }
+                break;
+        }
     }
 }

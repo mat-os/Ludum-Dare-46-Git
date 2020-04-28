@@ -19,7 +19,7 @@ public class UseSkill : MonoBehaviour
     {
         if (inventory.GetSkill(ButtonNumber).GetIsSkillPassive() != true)
         {
-            if (manaController.GetManaAmount() > inventory.GetSkill(ButtonNumber).GetManacost() && inventory.GetSkill(ButtonNumber).GetIsSkillReady())
+            if (inventory.GetSkill(ButtonNumber).GetIsSkillReady())
             {
                 inventory.GetSkill(ButtonNumber).UseSkill();
                 CountCooldown(ButtonNumber - 1);
@@ -37,17 +37,17 @@ public class UseSkill : MonoBehaviour
             UseSkillFromInventory(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && inventory.GetSkill(2) != null)
+        else if (Input.GetKeyDown(KeyCode.W) && inventory.GetSkill(2) != null)
         {
             UseSkillFromInventory(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && inventory.GetSkill(3) != null)
+        else if(Input.GetKeyDown(KeyCode.E) && inventory.GetSkill(3) != null)
         {
             UseSkillFromInventory(3);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && inventory.GetSkill(5) != null)
+        else if(Input.GetKeyDown(KeyCode.R) && inventory.GetSkill(5) != null)
         {
             UseSkillFromInventory(4);
         }
