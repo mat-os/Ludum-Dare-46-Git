@@ -88,6 +88,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8538798758171801163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637228183605940407
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8425597311559620913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +176,7 @@ MonoBehaviour:
   lastModified: 637236317050411408
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7639154218744899766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Fmod Banks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637236317049351645
+  lastModified: 637236974432481566
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -482,7 +500,7 @@ MonoBehaviour:
   Path: event:/Menu_Knob
   guid: 54cd5a94d75cad469917a7ed9bef678b
   Banks:
-  - {fileID: -7762992002785242082}
+  - {fileID: -3124857412569515186}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -562,6 +580,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3124857412569515186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637236974432791584
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2957711312898144505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +616,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2784316368098517741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu_Music/Inside
+  m_EditorClassIdentifier: 
+  Name: Inside
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-2753192884734840019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,6 +902,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-635504436788326744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MyMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod Banks/Desktop/MyMusic.bank
+  SubDir: 
+  lastModified: 637236974432771583
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-447319658565166009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,9 +969,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6935953685779066171}
-  - {fileID: 7753832158294594236}
-  - {fileID: 4569484866881358074}
-  - {fileID: -7762992002785242082}
+  - {fileID: -8538798758171801163}
+  - {fileID: -635504436788326744}
+  - {fileID: -3124857412569515186}
   EditorEvents:
   - {fileID: 705935100058051897}
   - {fileID: 426043817627268806}
@@ -908,10 +979,10 @@ MonoBehaviour:
   - {fileID: 6374669725340861679}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7753832158294594236}
+  - {fileID: -8538798758171801163}
   StringsBanks:
   - {fileID: -6935953685779066171}
-  stringsBankWriteTime: 637236317049351645
+  stringsBankWriteTime: 637236974432481566
   cacheVersion: 3
 --- !u!114 &419141283191939925
 MonoBehaviour:
@@ -946,12 +1017,12 @@ MonoBehaviour:
   Path: event:/Menu_Music
   guid: a5fccd21e64f49428ee5a2468d7ff300
   Banks:
-  - {fileID: 4569484866881358074}
+  - {fileID: -635504436788326744}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 6544850756743246289}
+  - {fileID: -2784316368098517741}
   MinDistance: 0
   MaxDistance: 0
   Length: 130909
@@ -1388,7 +1459,7 @@ MonoBehaviour:
   lastModified: 637236317049931513
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &4643761797833333917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,7 +1655,7 @@ MonoBehaviour:
   Path: event:/Menu_Knob_Navodka
   guid: 8bb5cc3fb8cd674f95b1f2e0c64da74d
   Banks:
-  - {fileID: -7762992002785242082}
+  - {fileID: -3124857412569515186}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1626,7 +1697,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6926693583655757409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,7 +1769,7 @@ MonoBehaviour:
   lastModified: 637236317049301649
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &8017972712945497487
 MonoBehaviour:
   m_ObjectHideFlags: 0
