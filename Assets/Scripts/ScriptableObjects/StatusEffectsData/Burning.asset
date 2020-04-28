@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Burning
   m_EditorClassIdentifier: 
   chanceOfEffect: 90
+  effectSprite: {fileID: 21300000, guid: 5918c69d592d4044bbf8c853f0e62180, type: 3}
   effectType: 0
   damageOfEffect: 0.1
   timeOfEffect: 1

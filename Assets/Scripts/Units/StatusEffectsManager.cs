@@ -13,11 +13,14 @@ public class StatusEffectsManager : MonoBehaviour
 
     public void AddEffect(StatusEffectData effect, float timeOfEffect)
     {
+        //BURNING
         if (effect.EffectType == StatusEffectData.effectsList.Burning && thisEntity.GetIsAlive())
         {
             StartCoroutine(DamageRoutine(effect.DamageOfEffect, effect.TimeOfEffect));
 
             GameInstance.Instance.particleSystemController.StartBurningEffect(thisEntity, timeOfEffect);
+
+            thisEntity.GetComponent<HPSysytem>().GetHPBar().SetEffect(effect);
         }
     }
 

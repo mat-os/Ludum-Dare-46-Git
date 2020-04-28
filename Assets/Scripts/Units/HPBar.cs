@@ -10,9 +10,11 @@ public class HPBar : MonoBehaviour
     [SerializeField] private Transform HPSliderImage;
     [SerializeField] private Transform FullHPSliderImage;
 
-    [SerializeField] private SpriteRenderer[] sprites;
+    //[SerializeField] private SpriteRenderer[] sprites;
 
-   private float HPNow;
+    [SerializeField] private HPBarStatusPanel statusPanel;
+
+    private float HPNow;
 
     public void UpdateHPBar(float maxHP, float HPAmount)
     {
@@ -42,22 +44,27 @@ public class HPBar : MonoBehaviour
         this.HPSliderImage.localScale = newScale;
     }
 
-    public void ChangeSpritesActive(bool isActive, Color inactiveColor)
+    public void SetEffect(StatusEffectData effect)
     {
-        switch (isActive)
-        {
-            case false:
-                for (int i = 0; i < sprites.Length; i++)
-                {
-                    sprites[i].color = inactiveColor;
-                }
-                break;
-            case true:
-                for (int i = 0; i < sprites.Length; i++)
-                {
-                    sprites[i].color = Color.white;
-                }
-                break;
-        }
+        statusPanel.SetEffect(effect.EffectSprite, effect.TimeOfEffect);
     }
+
+    //public void ChangeSpritesActive(bool isActive, Color inactiveColor)
+    //{
+    //    switch (isActive)
+    //    {
+    //        case false:
+    //            for (int i = 0; i < sprites.Length; i++)
+    //            {
+    //                sprites[i].color = inactiveColor;
+    //            }
+    //            break;
+    //        case true:
+    //            for (int i = 0; i < sprites.Length; i++)
+    //            {
+    //                sprites[i].color = Color.white;
+    //            }
+    //            break;
+    //    }
+    //}
 }

@@ -9,6 +9,9 @@ public class StatusEffectData : ScriptableObject
     private float chanceOfEffect;
 
     [SerializeField]
+    private Sprite effectSprite;
+
+    [SerializeField]
     private effectsList effectType;
 
     [SerializeField]
@@ -22,6 +25,14 @@ public class StatusEffectData : ScriptableObject
         get
         {
             return chanceOfEffect;
+        }
+    }
+
+    public Sprite EffectSprite
+    {
+        get
+        {
+            return effectSprite;
         }
     }
     public effectsList EffectType
@@ -48,11 +59,11 @@ public class StatusEffectData : ScriptableObject
 
     public enum effectsList
     {
-        Burning,
-        Poison,
-        Bleeding,
-        Stun,
-        Qurse
+        Burning = 0,
+        Poison = 1,
+        Bleeding = 2,
+        Stun = 3,
+        Qurse = 4
     }
 }
 
