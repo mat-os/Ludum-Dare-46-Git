@@ -1,25 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New LevelData", menuName = "Level Data", order = 51)]
 public class LevelData : ScriptableObject
 {
     [SerializeField]
-    private int stagesOnLevel;
+    private int stagesWithEnemyOnLevel;
 
     [SerializeField]
-    private StageData[] possibleStages;
+    private List<StageData> possibleStages = new List<StageData>();
 
+    [SerializeField]
+    private int specialStagesOnLevel;
+
+    [SerializeField]
+    private List<SpecialStageData> possibleSpectialStages = new List<SpecialStageData>();
+    
     [SerializeField]
     private bool isHaveBoss;
 
     [SerializeField]
     private StageData bosStageData;
 
-    private StageData[] shuffledStages;
 
-    public StageData[] PossibleStages
+    public int StagesWithEnemyOnLevel
+    {
+        get
+        {
+            return stagesWithEnemyOnLevel;
+        }
+    }
+
+    public int SpecialStagesOnLevel
+    {
+        get
+        {
+            return specialStagesOnLevel;
+        }
+    }
+    public List<StageData> PossibleStages
     {
         get
         {
@@ -27,35 +48,12 @@ public class LevelData : ScriptableObject
         }
     }
 
-    public int StagesOnLevel
+    public List<SpecialStageData> PossibleSpectialStages
     {
         get
         {
-            return stagesOnLevel;
-        }
-    }
-
-    public StageData[] ShuffledStages
-    {
-        get
-        {
-            shuffledStages = possibleStages;
-            RandomizeArray(shuffledStages);
-            return shuffledStages;
-        }
-    }
-
-
-
-    public static void RandomizeArray<T>(T[] array)
-    {
-        int size = array.Length;
-        for (int i = 0; i < size; i++)
-        {
-            int indexToSwap = Random.Range(i, size);
-            T swapValue = array[i];
-            array[i] = array[indexToSwap];
-            array[indexToSwap] = swapValue;
+            return possibleSpectialStages;
         }
     }
 }
+

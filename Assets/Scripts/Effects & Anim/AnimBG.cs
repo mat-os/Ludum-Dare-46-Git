@@ -63,7 +63,6 @@ public class AnimBG : MonoBehaviour
 
             yield return new WaitForSeconds(animSpeed);
         }
-
         yield return null;
     }
 }

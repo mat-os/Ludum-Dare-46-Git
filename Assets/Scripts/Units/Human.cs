@@ -97,7 +97,7 @@ public class Human : Entity
 
         if (GameInstance.Instance.gameStatus.gameState != GameStatus.GameState.Walk)
         {
-            GameInstance.Instance.gameplayController.Walk();
+            GameInstance.Instance.gameplayController.WalkAndSearch();
         }
     }
 

@@ -24,11 +24,35 @@ public class GameplayController : MonoBehaviour
 
         if (gameStatus.gameState == GameStatus.GameState.StartNewLevel)
         {
-            Walk();
+            WalkAndSearch();
         }
     }
 
-    public void Walk()
+
+    //Когда мы нашли что-то
+    private void FindSomething()
+    {
+        if (GameInstance.Instance.levelSpawnManager.isLevelEnd() == true)
+        {
+            Chill();
+        }
+        else
+        {
+            FindNewRoom();
+
+            if (levelSpawnManager.IsNewRoomWithEnemy())
+            {
+                Fight();
+            }
+            else
+            {
+                OnSpecialRoomEvent();
+            }
+        }
+    }
+
+    //Идем
+    public void WalkAndSearch()
     {
         gameStatus.gameState = GameStatus.GameState.Walk;
 
@@ -37,26 +61,25 @@ public class GameplayController : MonoBehaviour
         StartCoroutine(WalkRoutine());
     }
 
-    private void Fight()
+    public void FindNewRoom()
     {
-        if (GameInstance.Instance.levelSpawnManager.isLevelEnd() == true)
-        {
-            Chill();
-        }
-        else
-        {
-            gameStatus.gameState = GameStatus.GameState.Fight;
-
-            ChangeAnimStateGirls();
-
-            levelSpawnManager.SpawnEnemies();
-
-            girlLeft.FindTarget();
-
-            girlRight.FindTarget();
-        }
+        levelSpawnManager.SpawnNewStage();
     }
 
+    //Начинаем бой
+    public void Fight()
+    {
+        gameStatus.gameState = GameStatus.GameState.Fight;
+
+        ChangeAnimStateGirls();
+
+
+        girlLeft.FindTarget();
+
+        girlRight.FindTarget();
+    }
+
+    //Отдых в конце уровня на алтаре
     public void Chill()
     {
         gameStatus.gameState = GameStatus.GameState.Chill;
@@ -64,15 +87,23 @@ public class GameplayController : MonoBehaviour
         ChangeAnimStateGirls();
 
         сhillManager.StartChill();
+    }
 
-        Debug.Log("WE ARE CHILL");
+    //Нашли спец. комнату
+    public void OnSpecialRoomEvent()
+    {
+        gameStatus.gameState = GameStatus.GameState.Chill;
+
+        ChangeAnimStateGirls();
+
+        Debug.Log("ASDASD");
     }
 
     IEnumerator WalkRoutine()
     {
         yield return new WaitForSeconds(Random.Range(walkTimeMinMax.x, walkTimeMinMax.y));
 
-        Fight();
+        FindSomething();
 
         yield return null;
     }

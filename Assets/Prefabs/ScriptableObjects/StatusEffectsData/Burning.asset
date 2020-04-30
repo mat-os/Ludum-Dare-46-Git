@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7911875b04bc63d40bcc908aea5c5e74, type: 3}
   m_Name: Burning
   m_EditorClassIdentifier: 
-  chanceOfEffect: 90
-  effectSprite: {fileID: 21300000, guid: 5918c69d592d4044bbf8c853f0e62180, type: 3}
+  chanceOfEffect: 10
+  effectSprite: {fileID: 21300000, guid: da2724003bb2cad4fa0ceb62691a2552, type: 3}
   effectType: 0
   damageOfEffect: 0.1
   timeOfEffect: 1

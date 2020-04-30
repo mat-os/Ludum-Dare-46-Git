@@ -63,7 +63,8 @@ public class StatusEffectData : ScriptableObject
         Poison = 1,
         Bleeding = 2,
         Stun = 3,
-        Qurse = 4
+        Qurse = 4,
+        AttackRate = 5
     }
 }
 

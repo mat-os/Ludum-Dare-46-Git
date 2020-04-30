@@ -14,7 +14,7 @@ public class ChillManager : MonoBehaviour
 
         Altar.SetActive(false);
 
-        GameInstance.Instance.gameplayController.Walk();
+        GameInstance.Instance.gameplayController.WalkAndSearch();
 
         GameInstance.Instance.manaController.RestoreAllMana();
     }
