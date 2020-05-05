@@ -16,6 +16,7 @@ MonoBehaviour:
   enemyName: Bat_1
   description: 
   HP: 75
-  minAttackDamage: 5
-  maxAttackDamage: 10
+  minAttackDamage: 7
+  maxAttackDamage: 12
   attackRate: 1
+  effectData: {fileID: 0}

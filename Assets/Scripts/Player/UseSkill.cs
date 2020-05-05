@@ -19,7 +19,7 @@ public class UseSkill : MonoBehaviour
     {
         if (inventory.GetSkill(ButtonNumber).GetIsSkillPassive() != true)
         {
-            if (inventory.GetSkill(ButtonNumber).GetIsSkillReady())
+            if (inventory.GetSkill(ButtonNumber).GetIsSkillReady() && inventory.GetSkill(ButtonNumber).GetManacost() < manaController.GetManaAmount())
             {
                 inventory.GetSkill(ButtonNumber).UseSkill();
                 CountCooldown(ButtonNumber - 1);

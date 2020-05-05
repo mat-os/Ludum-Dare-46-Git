@@ -6,19 +6,18 @@ public abstract class Entity : MonoBehaviour
 {
     [SerializeField] private float HPmax;
     private float HPAmount;
-
+    [Space]
     [SerializeField] private float damageMin;
     [SerializeField] private float damageMax;
     [SerializeField] private float attackRate;
-
+    [Space]
     [SerializeField] private float armorAmount;
 
+    private bool isAlive = true;
     void Awake()
     {
         HPAmount = HPmax;
     }
-
-    private bool isAlive = true;
     public abstract void Dead();
 
     public abstract void TakeDamage(float damageTaken);

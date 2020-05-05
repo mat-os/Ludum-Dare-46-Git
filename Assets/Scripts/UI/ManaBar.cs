@@ -67,7 +67,7 @@ public class Mana
     {
         MANA_MAX = maxMana;
 
-        manaAmount = 0;
+        manaAmount = MANA_MAX;
 
         manaRegenAmount = _manaRegenAmount;
     }
@@ -75,7 +75,7 @@ public class Mana
     //Add ManaRegen and Clamp it
     public void Update(TMP_Text textToUpdate)
     {
-        manaAmount -= manaRegenAmount * Time.deltaTime;
+        manaAmount += manaRegenAmount * Time.deltaTime;
 
         manaAmount = Mathf.Clamp(manaAmount, 0, MANA_MAX);
 
@@ -86,7 +86,7 @@ public class Mana
     //Method to spend mana
     public void SpendMana(float amount)
     {
-        manaAmount += amount;
+        manaAmount -= amount;
     }
     //Method to restore mana
     public void RestoreMana(int amount)

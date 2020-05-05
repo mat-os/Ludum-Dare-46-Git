@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stagesWithEnemyOnLevel: 4
   possibleStages:
-  - {fileID: 11400000, guid: f608be07225aa484ea7281b27da7d860, type: 2}
-  - {fileID: 11400000, guid: f608be07225aa484ea7281b27da7d860, type: 2}
-  - {fileID: 11400000, guid: f608be07225aa484ea7281b27da7d860, type: 2}
   - {fileID: 11400000, guid: 87825bc58afa4db4885b10281dee7a9c, type: 2}
+  - {fileID: 11400000, guid: f608be07225aa484ea7281b27da7d860, type: 2}
+  - {fileID: 11400000, guid: f608be07225aa484ea7281b27da7d860, type: 2}
+  - {fileID: 11400000, guid: f608be07225aa484ea7281b27da7d860, type: 2}
   specialStagesOnLevel: 1
   possibleSpectialStages:
   - {fileID: 11400000, guid: 38a758ba06efa3b4f92fb7444a28ea7f, type: 2}

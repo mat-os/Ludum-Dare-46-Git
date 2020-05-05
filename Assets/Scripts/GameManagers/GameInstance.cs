@@ -7,6 +7,7 @@ public class GameInstance : MonoBehaviour
     public Transform popupText;
 
     public PlayerInput playerInput;
+    
     public ManaController manaController;
 
     public GameStatus gameStatus;
@@ -18,6 +19,8 @@ public class GameInstance : MonoBehaviour
     public LevelSpawnManager levelSpawnManager;
 
     public ParticleSystemController particleSystemController;
+
+    public EntitiesControler EntitiesControler;
 
     #region Awake
     public static GameInstance Instance;

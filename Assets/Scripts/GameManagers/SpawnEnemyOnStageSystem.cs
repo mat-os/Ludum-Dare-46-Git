@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemyOnStageSystem : MonoBehaviour
 {
+    //Позиции, в которых спавнятся монстры
     public Transform enemySpawnPosCenter;
 
     public Transform enemySpawnPosMidleft;
@@ -22,6 +23,8 @@ public class SpawnEnemyOnStageSystem : MonoBehaviour
             currentEnemy.name = enemyData.EnemyName;
 
             UnitInit(currentEnemy.GetComponent<Entity>(), enemyData.MinAttackDamage, enemyData.MaxAttackDamage, enemyData.AttackRate, enemyData.HPAmount);
+            
+            GameInstance.Instance.EntitiesControler.enemiesList.Add(currentEnemy); 
         }
     }
 
